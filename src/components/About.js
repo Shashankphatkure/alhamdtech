@@ -144,7 +144,7 @@ export default function About() {
   };
 
   return (
-    <section id="about" className="py-18 bg-white">
+    <section id="about" className="py-18 bg-white  overflow-hidden">
       <div className="container mx-auto px-4 md:px-8">
         <div className="flex flex-col md:flex-row items-center">
           {/* Right Image - 50% - Moved to top on mobile */}
