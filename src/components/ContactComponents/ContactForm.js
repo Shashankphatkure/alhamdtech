@@ -88,7 +88,7 @@ export default function ContactForm() {
                 value={formData.name}
                 onChange={handleChange}
                 required
-                className="w-full px-4 py-2 border border-gray-300 rounded-md bg-white text-gray-800 focus:ring-purple-500 focus:border-purple-500 transition-all duration-200"
+                className="w-full px-4 py-2 border border-gray-300 rounded-md bg-white text-gray-800 focus:ring-slate-500 focus:border-slate-500 transition-all duration-200"
                 placeholder="Your name"
               />
             </div>
@@ -105,7 +105,7 @@ export default function ContactForm() {
                 value={formData.email}
                 onChange={handleChange}
                 required
-                className="w-full px-4 py-2 border border-gray-300 rounded-md bg-white text-gray-800 focus:ring-purple-500 focus:border-purple-500 transition-all duration-200"
+                className="w-full px-4 py-2 border border-gray-300 rounded-md bg-white text-gray-800 focus:ring-slate-500 focus:border-slate-500 transition-all duration-200"
                 placeholder="Your email"
               />
             </div>
@@ -122,7 +122,7 @@ export default function ContactForm() {
                 value={formData.phone}
                 onChange={handleChange}
                 required
-                className="w-full px-4 py-2 border border-gray-300 rounded-md bg-white text-gray-800 focus:ring-purple-500 focus:border-purple-500 transition-all duration-200"
+                className="w-full px-4 py-2 border border-gray-300 rounded-md bg-white text-gray-800 focus:ring-slate-500 focus:border-slate-500 transition-all duration-200"
                 placeholder="Your phone"
               />
             </div>
@@ -138,7 +138,7 @@ export default function ContactForm() {
                 name="subject"
                 value={formData.subject}
                 onChange={handleChange}
-                className="w-full px-4 py-2 border border-gray-300 rounded-md bg-white text-gray-800 focus:ring-purple-500 focus:border-purple-500 transition-all duration-200"
+                className="w-full px-4 py-2 border border-gray-300 rounded-md bg-white text-gray-800 focus:ring-slate-500 focus:border-slate-500 transition-all duration-200"
                 placeholder="Subject"
               />
             </div>
@@ -154,7 +154,7 @@ export default function ContactForm() {
                 name="company"
                 value={formData.company}
                 onChange={handleChange}
-                className="w-full px-4 py-2 border border-gray-300 rounded-md bg-white text-gray-800 focus:ring-purple-500 focus:border-purple-500 transition-all duration-200"
+                className="w-full px-4 py-2 border border-gray-300 rounded-md bg-white text-gray-800 focus:ring-slate-500 focus:border-slate-500 transition-all duration-200"
                 placeholder="Your company name"
               />
             </div>
@@ -170,7 +170,7 @@ export default function ContactForm() {
                 name="address"
                 value={formData.address}
                 onChange={handleChange}
-                className="w-full px-4 py-2 border border-gray-300 rounded-md bg-white text-gray-800 focus:ring-purple-500 focus:border-purple-500 transition-all duration-200"
+                className="w-full px-4 py-2 border border-gray-300 rounded-md bg-white text-gray-800 focus:ring-slate-500 focus:border-slate-500 transition-all duration-200"
                 placeholder="Your location"
               />
             </div>
@@ -185,7 +185,7 @@ export default function ContactForm() {
                 name="budget"
                 value={formData.budget}
                 onChange={handleChange}
-                className="w-full px-4 py-2 border border-gray-300 rounded-md bg-white text-gray-800 focus:ring-purple-500 focus:border-purple-500 transition-all duration-200"
+                className="w-full px-4 py-2 border border-gray-300 rounded-md bg-white text-gray-800 focus:ring-slate-500 focus:border-slate-500 transition-all duration-200"
               >
                 <option value="">Select budget range</option>
                 <option value="$1,000 - $5,000">$1,000 - $5,000</option>
@@ -208,7 +208,7 @@ export default function ContactForm() {
               value={formData.requirement}
               onChange={handleChange}
               required
-              className="w-full px-4 py-2 border border-gray-300 rounded-md bg-white text-gray-800 focus:ring-purple-500 focus:border-purple-500 resize-none transition-all duration-200"
+              className="w-full px-4 py-2 border border-gray-300 rounded-md bg-white text-gray-800 focus:ring-slate-500 focus:border-slate-500 resize-none transition-all duration-200"
               placeholder="Describe your requirements in detail..."
             ></textarea>
           </div>
@@ -219,9 +219,9 @@ export default function ContactForm() {
               <input 
                 type="checkbox"
                 required
-                className="rounded border-gray-300 text-purple-600 bg-white shadow-sm focus:border-purple-300 focus:ring focus:ring-purple-200 focus:ring-opacity-50"
+                className="rounded border-gray-300 text-[#000080] bg-white shadow-sm focus:border-slate-300 focus:ring focus:ring-slate-200 focus:ring-opacity-50"
               />
-              <span className="ml-2 text-gray-700">I agree to the <a href="#" className="text-purple-600 hover:underline">privacy policy</a> and consent to being contacted regarding my inquiry.</span>
+              <span className="ml-2 text-gray-700">I agree to the <a href="#" className="text-[#000080] hover:underline">privacy policy</a> and consent to being contacted regarding my inquiry.</span>
             </label>
           </div>
         </div>
@@ -230,7 +230,7 @@ export default function ContactForm() {
         <div className="flex justify-between items-center bg-white p-4 shadow-md">
           <button
             type="submit"
-            className="bg-purple-600 hover:bg-purple-700 text-white font-medium py-2 px-6 rounded-md transition-colors duration-200 flex items-center"
+            className="bg-[#000080] hover:bg-[#000080] text-white font-medium py-2 px-6 rounded-md transition-colors duration-200 flex items-center"
           >
             <span>Submit Inquiry</span>
             {submitting && (
@@ -243,7 +243,7 @@ export default function ContactForm() {
           
           <button
             type="button"
-            className="text-purple-600 hover:text-purple-700 font-medium transition-colors duration-200 flex items-center"
+            className="text-[#000080] hover:text-[#000080] font-medium transition-colors duration-200 flex items-center"
             onClick={() => {
               setFormData({
                 name: '',

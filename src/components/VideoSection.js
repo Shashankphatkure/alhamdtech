@@ -152,19 +152,19 @@ const VideoSection = () => {
   };
 
   return (
-    <section id="videos" className="relative w-full bg-gradient-to-br from-white via-purple-50 to-slate-50 py-16 overflow-hidden">
+    <section id="videos" className="relative w-full bg-gradient-to-br from-white via-[#000080]/10 to-[#000080]/10 py-16 overflow-hidden">
       {/* Background decorative elements */}
-      <div className="absolute -top-64 -right-64 w-96 h-96 rounded-full bg-purple-100/40 blur-3xl"></div>
-      <div className="absolute -bottom-32 -left-32 w-80 h-80 rounded-full bg-purple-100/40 blur-3xl"></div>
-      <div className="absolute top-1/4 left-1/2 w-64 h-64 rounded-full bg-purple-100/30 blur-3xl"></div>
+      <div className="absolute -top-64 -right-64 w-96 h-96 rounded-full bg-[#000080]/20/40 blur-3xl"></div>
+      <div className="absolute -bottom-32 -left-32 w-80 h-80 rounded-full bg-[#000080]/20/40 blur-3xl"></div>
+      <div className="absolute top-1/4 left-1/2 w-64 h-64 rounded-full bg-[#000080]/20/30 blur-3xl"></div>
       
       <div className="container mx-auto px-4 relative z-10">
         <div className="flex flex-col md:flex-row md:justify-between md:items-center mb-12">
           <div className="md:max-w-2xl">
-            <span className="px-4 py-1.5 bg-purple-100 text-purple-700 text-xs font-semibold tracking-wider rounded-full mb-4 inline-block">
+            <span className="px-4 py-1.5 bg-[#000080]/20 text-[#000080] text-xs font-semibold tracking-wider rounded-full mb-4 inline-block">
               OUR COLLECTION
             </span>
-            <h2 className="text-4xl md:text-5xl font-extrabold text-gray-800 mb-4 bg-clip-text text-transparent bg-gradient-to-r from-purple-500 to-purple-400">
+            <h2 className="text-4xl md:text-5xl font-extrabold text-gray-800 mb-4 bg-clip-text text-transparent bg-gradient-to-r from-[#000080] to-[#898989]">
               Hardware Projects
             </h2>
             <p className="text-gray-600 mb-2">
@@ -174,8 +174,8 @@ const VideoSection = () => {
           
           <a href="https://www.youtube.com/@TheAlhamdTechnologies" target="_blank" rel="noopener noreferrer" 
              className="mt-6 md:mt-0 flex items-center justify-center px-6 py-3 rounded-xl text-sm font-medium 
-                      bg-gradient-to-r from-purple-500 to-purple-400 text-white shadow-lg shadow-purple-500/20 
-                      hover:shadow-purple-500/40 transition-all duration-300">
+                      bg-gradient-to-r from-[#000080] to-[#898989] text-white shadow-lg shadow-[#000080]/20 
+                      hover:shadow-[#000080]/40 transition-all duration-300">
             <svg className="w-5 h-5 mr-2" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
               <path d="M19.615 3.184c-3.604-.246-11.631-.245-15.23 0-3.897.266-4.356 2.62-4.385 8.816.029 6.185.484 8.549 4.385 8.816 3.6.245 11.626.246 15.23 0 3.897-.266 4.356-2.62 4.385-8.816-.029-6.185-.484-8.549-4.385-8.816zm-10.615 12.816v-8l8 3.993-8 4.007z"/>
             </svg>
@@ -187,7 +187,7 @@ const VideoSection = () => {
           {/* Main video display - full width */}
           <div className="w-full">
             <div 
-              className="relative rounded-2xl overflow-hidden shadow-2xl bg-black border border-purple-500/20 group transform transition-all duration-300"
+              className="relative rounded-2xl overflow-hidden shadow-2xl bg-black border border-[#000080]/20 group transform transition-all duration-300"
               onMouseEnter={handleMouseEnter}
               onMouseLeave={handleMouseLeave}
             >
@@ -199,7 +199,7 @@ const VideoSection = () => {
                 <iframe 
                   ref={playerRef}
                   className="absolute top-0 left-0 w-full h-full"
-                  src={`https://www.youtube.com/embed/${videos[activeIndex].id}?autoplay=1&mute=0&controls=0&modestbranding=1&rel=0&enablejsapi=1&origin=${origin}&showinfo=0&fs=1&disablekb=1&iv_load_policy=3&color=white`}
+                  src={`https://www.youtube.com/embed/${videos[activeIndex].id}?autoplay=0&mute=0&controls=0&modestbranding=1&rel=0&enablejsapi=1&origin=${origin}&showinfo=0&fs=1&disablekb=1&iv_load_policy=3&color=white`}
                   title={videos[activeIndex].title}
                   allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                   allowFullScreen
@@ -215,7 +215,7 @@ const VideoSection = () => {
                 {/* Play icon overlay when paused */}
                 {!isPlaying && (
                   <div className="absolute inset-0 z-20 flex items-center justify-center pointer-events-none">
-                    <div className="w-24 h-24 bg-purple-600/60 rounded-full flex items-center justify-center backdrop-blur-md shadow-xl shadow-purple-500/20 animate-pulse">
+                    <div className="w-24 h-24 bg-[#000080]/60 rounded-full flex items-center justify-center backdrop-blur-md shadow-xl shadow-[#000080]/20 animate-pulse">
                       <svg xmlns="http://www.w3.org/2000/svg" className="h-12 w-12 text-white" viewBox="0 0 20 20" fill="currentColor">
                         <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM9.555 7.168A1 1 0 008 8v4a1 1 0 001.555.832l3-2a1 1 0 000-1.664l-3-2z" clipRule="evenodd" />
                       </svg>
@@ -315,7 +315,7 @@ const VideoSection = () => {
                     }`}
                   />
                   <div className={`absolute inset-0 ${
-                    index === activeIndex ? 'bg-purple-500/10 border-2 border-purple-500' : 'bg-black/40'
+                    index === activeIndex ? 'bg-[#000080]/10 border-2 border-[#000080]' : 'bg-black/40'
                   } rounded-xl`}></div>
                   
                   {/* Duration badge */}
@@ -325,16 +325,16 @@ const VideoSection = () => {
                   
                   {index === activeIndex && isPlaying && (
                     <div className="absolute bottom-2 left-2 flex items-center space-x-1">
-                      <div className="w-1.5 h-3 bg-purple-500 rounded-sm animate-pulse"></div>
-                      <div className="w-1.5 h-4 bg-purple-500 rounded-sm animate-pulse delay-75"></div>
-                      <div className="w-1.5 h-2.5 bg-purple-500 rounded-sm animate-pulse delay-150"></div>
+                      <div className="w-1.5 h-3 bg-[#000080] rounded-sm animate-pulse"></div>
+                      <div className="w-1.5 h-4 bg-[#000080] rounded-sm animate-pulse delay-75"></div>
+                      <div className="w-1.5 h-2.5 bg-[#000080] rounded-sm animate-pulse delay-150"></div>
                     </div>
                   )}
                 </div>
                 
                 <div className="mt-3">
                   <h4 className={`font-medium line-clamp-1 ${
-                    index === activeIndex ? 'text-purple-600' : 'text-gray-700'
+                    index === activeIndex ? 'text-[#000080]' : 'text-gray-700'
                   }`}>
                     {video.title}
                   </h4>

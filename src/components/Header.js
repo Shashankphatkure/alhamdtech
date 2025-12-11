@@ -321,15 +321,15 @@ export default function Header() {
   }, [isSearchOpen]);
 
   return (
-    <header 
+    <header
       ref={headerRef}
-      className={`fixed w-full py-2 md:py-3 px-4 md:px-8 transition-all duration-300 ${
-        scrolled 
-          ? 'bg-white shadow-lg' 
+      className={`fixed w-full transition-all duration-300 ${
+        scrolled
+          ? 'bg-white shadow-lg'
           : 'bg-white'
       } ${
-        headerVisible 
-          ? 'translate-y-0' 
+        headerVisible
+          ? 'translate-y-0'
           : '-translate-y-full'
       }`}
       style={{
@@ -338,15 +338,28 @@ export default function Header() {
         zIndex: 50,
       }}
     >
+      {/* Top Bar with Address */}
+      <div className="bg-[#000080] text-white py-1.5 px-4 md:px-8">
+        <div className="flex items-center justify-center text-xs md:text-sm">
+          <svg className="w-3.5 h-3.5 mr-2 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path>
+            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path>
+          </svg>
+          <span className="truncate">H No.1890, BHIM NAGAR, MIDC Rd, opp. R-303, near Masjid, Naka, Rabale, Navi Mumbai, Maharashtra 400701</span>
+        </div>
+      </div>
+
+      {/* Main Header */}
+      <div className="py-2 md:py-3 px-4 md:px-8">
       <div className="flex justify-between items-center w-full">
         {/* Enhanced Logo with Gradient and Subtle Animation */}
         <Link href="/" className="flex items-center space-x-2 group">
-          <div className="h-7 w-7 sm:h-8 sm:w-8 relative bg-gradient-to-br from-purple-500 to-purple-700 rounded-lg flex items-center justify-center overflow-hidden shadow-md transition-all duration-300 group-hover:shadow-purple-200">
-            <div className="absolute inset-0 bg-purple-600 opacity-0 group-hover:opacity-20 transition-opacity duration-300"></div>
+          <div className="h-7 w-7 sm:h-8 sm:w-8 relative bg-[#000080] rounded-lg flex items-center justify-center overflow-hidden shadow-md transition-all duration-300 group-hover:shadow-[#898989]/30">
+            <div className="absolute inset-0 bg-[#000080] opacity-0 group-hover:opacity-20 transition-opacity duration-300"></div>
             <span className="text-white font-bold text-base sm:text-lg relative z-10 transform group-hover:scale-110 transition-transform duration-300">A</span>
           </div>
           <div>
-            <h1 className="text-base sm:text-lg font-bold text-gray-800 leading-tight group-hover:text-purple-600 transition-colors duration-300">ALHAMD</h1>
+            <h1 className="text-base sm:text-lg font-bold text-gray-800 leading-tight group-hover:text-[#000080] transition-colors duration-300">ALHAMD</h1>
             <p className="text-[10px] sm:text-xs font-medium text-gray-600 -mt-1 tracking-wider opacity-90">TECHNOLOGIES</p>
           </div>
         </Link>
@@ -357,8 +370,8 @@ export default function Header() {
             <Link 
               key={item}
               href={`#${item}`} 
-              className={`text-gray-700 hover:text-purple-600 font-medium transition-all duration-300 relative group px-3 py-1.5 ${
-                activeSection === item ? 'text-purple-600' : ''
+              className={`text-gray-700 hover:text-[#000080] font-medium transition-all duration-300 relative group px-3 py-1.5 ${
+                activeSection === item ? 'text-[#000080]' : ''
               }`}
             >
               <span className="relative z-10">
@@ -366,12 +379,12 @@ export default function Header() {
               </span>
               
               {/* Enhanced active indicator with animation */}
-              <span className={`absolute -bottom-1 left-0 h-0.5 bg-purple-600 transition-all duration-300 ease-out ${
+              <span className={`absolute -bottom-1 left-0 h-0.5 bg-[#000080] transition-all duration-300 ease-out ${
                 activeSection === item ? 'w-full' : 'w-0 group-hover:w-full'
               }`}></span>
               
               {/* Hover background effect */}
-              <span className="absolute inset-0 bg-purple-50 rounded-xl opacity-0 group-hover:opacity-100 transition-opacity duration-300 -z-10"></span>
+              <span className="absolute inset-0 bg-[#000080]/10 rounded-xl opacity-0 group-hover:opacity-100 transition-opacity duration-300 -z-10"></span>
             </Link>
           ))}
         </nav>
@@ -380,7 +393,7 @@ export default function Header() {
         <div className="hidden md:flex items-center space-x-4">
           <button 
             onClick={toggleSearch}
-            className="p-1.5 rounded-full text-gray-700 hover:text-purple-600 hover:bg-purple-50 transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-purple-200 relative overflow-hidden"
+            className="p-1.5 rounded-full text-gray-700 hover:text-[#000080] hover:bg-[#000080]/10 transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-[#000080]/30 relative overflow-hidden"
             aria-label="Search"
           >
             <svg xmlns="http://www.w3.org/2000/svg" className="h-4.5 w-4.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -388,13 +401,13 @@ export default function Header() {
             </svg>
             
             {/* Ripple effect on click */}
-            <span className="absolute inset-0 bg-purple-100 opacity-30 transform scale-0 group-active:scale-100 transition-transform duration-500 rounded-full"></span>
+            <span className="absolute inset-0 bg-[#000080]/20 opacity-30 transform scale-0 group-active:scale-100 transition-transform duration-500 rounded-full"></span>
           </button>
           
           {/* Enhanced CTA Button */}
           <a 
             href="#contact" 
-            className="px-4 py-1.5 bg-gradient-to-r from-purple-600 to-purple-700 text-white rounded-md hover:from-purple-700 hover:to-purple-800 transition-all duration-300 shadow-sm hover:shadow-md focus:ring-2 focus:ring-purple-300 focus:outline-none transform hover:-translate-y-0.5 active:translate-y-0"
+            className="px-4 py-1.5 bg-gradient-to-r from-[#000080] to-[#000060] text-white rounded-md hover:from-[#000060] hover:to-[#000040] transition-all duration-300 shadow-sm hover:shadow-md focus:ring-2 focus:ring-[#000080]/40 focus:outline-none transform hover:-translate-y-0.5 active:translate-y-0"
           >
             Get in Touch
           </a>
@@ -404,7 +417,7 @@ export default function Header() {
         <div className="md:hidden flex items-center space-x-3">
           <button 
             onClick={toggleSearch}
-            className="p-1.5 rounded-full text-gray-700 hover:text-purple-600 hover:bg-purple-50 transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-purple-100"
+            className="p-1.5 rounded-full text-gray-700 hover:text-[#000080] hover:bg-[#000080]/10 transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-[#000080]/20"
             aria-label="Search"
           >
             <svg xmlns="http://www.w3.org/2000/svg" className="h-4.5 w-4.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -412,7 +425,7 @@ export default function Header() {
             </svg>
           </button>
           <button 
-            className="p-1.5 rounded-md text-gray-700 hover:text-purple-600 hover:bg-purple-50 focus:outline-none focus:ring-2 focus:ring-purple-100 transition-all duration-200"
+            className="p-1.5 rounded-md text-gray-700 hover:text-[#000080] hover:bg-[#000080]/10 focus:outline-none focus:ring-2 focus:ring-[#000080]/20 transition-all duration-200"
             onClick={toggleMobileMenu}
             aria-label="Toggle menu"
           >
@@ -428,7 +441,8 @@ export default function Header() {
           </button>
         </div>
       </div>
-      
+      </div>
+
       {/* Enhanced Search Popup with Results */}
       {isSearchOpen && (
         <div 
@@ -442,7 +456,7 @@ export default function Header() {
             style={{ filter: 'blur(0)', transform: 'translateY(0)', zIndex: 101 }}
           >
             <form onSubmit={handleSearchSubmit} className="relative">
-              <div className="absolute left-4 sm:left-6 top-1/2 transform -translate-y-1/2 text-purple-500">
+              <div className="absolute left-4 sm:left-6 top-1/2 transform -translate-y-1/2 text-[#000080]">
                 <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
                 </svg>
@@ -457,7 +471,7 @@ export default function Header() {
               />
               <button 
                 type="submit"
-                className="absolute right-3 sm:right-4 top-1/2 transform -translate-y-1/2 px-2 sm:px-3 py-1 sm:py-1.5 text-xs sm:text-sm bg-purple-600 text-white rounded-md hover:bg-purple-700 transition-colors duration-200"
+                className="absolute right-3 sm:right-4 top-1/2 transform -translate-y-1/2 px-2 sm:px-3 py-1 sm:py-1.5 text-xs sm:text-sm bg-[#000080] text-white rounded-md hover:bg-[#000060] transition-colors duration-200"
                 aria-label="Submit search"
               >
                 Search
@@ -476,10 +490,10 @@ export default function Header() {
                         {searchResults.services.map((service) => (
                           <div 
                             key={service.id} 
-                            className="p-3 hover:bg-purple-50 rounded-lg cursor-pointer transition-colors duration-200"
+                            className="p-3 hover:bg-[#000080]/10 rounded-lg cursor-pointer transition-colors duration-200"
                             onClick={() => handleSearchResultClick(service.path)}
                           >
-                            <h4 className="text-md font-medium text-purple-700">{service.title}</h4>
+                            <h4 className="text-md font-medium text-[#000080]">{service.title}</h4>
                             <p className="text-sm text-gray-600">{service.description}</p>
                           </div>
                         ))}
@@ -495,10 +509,10 @@ export default function Header() {
                         {searchResults.pages.map((page) => (
                           <div 
                             key={page.path} 
-                            className="p-3 hover:bg-purple-50 rounded-lg cursor-pointer transition-colors duration-200"
+                            className="p-3 hover:bg-[#000080]/10 rounded-lg cursor-pointer transition-colors duration-200"
                             onClick={() => handleSearchResultClick(page.path)}
                           >
-                            <h4 className="text-md font-medium text-purple-700">{page.title}</h4>
+                            <h4 className="text-md font-medium text-[#000080]">{page.title}</h4>
                             <p className="text-sm text-gray-600">{page.description}</p>
                           </div>
                         ))}
@@ -525,10 +539,10 @@ export default function Header() {
                       {services.map((service) => (
                         <div 
                           key={service.id} 
-                          className="p-3 border border-gray-100 hover:border-purple-200 hover:bg-purple-50 rounded-lg cursor-pointer transition-all duration-200"
+                          className="p-3 border border-gray-100 hover:border-[#000080]/30 hover:bg-[#000080]/10 rounded-lg cursor-pointer transition-all duration-200"
                           onClick={() => handleSearchResultClick(service.path)}
                         >
-                          <h4 className="text-md font-medium text-purple-700">{service.title}</h4>
+                          <h4 className="text-md font-medium text-[#000080]">{service.title}</h4>
                           <p className="text-xs text-gray-600 mt-1">{service.description}</p>
                         </div>
                       ))}
@@ -542,7 +556,7 @@ export default function Header() {
                       {['Milling Work', 'CNC Work', 'Lathe Work', 'Marine Ship Parts', 'Fabrication', 'Oil and Gas', 'Wire Cut', 'Laser Cutting', 'Contact'].map((term) => (
                         <button 
                           key={term}
-                          className="px-3 py-1 bg-gray-100 hover:bg-purple-50 rounded-full text-sm text-gray-700 hover:text-purple-600 transition-colors duration-200"
+                          className="px-3 py-1 bg-gray-100 hover:bg-[#000080]/10 rounded-full text-sm text-gray-700 hover:text-[#000080] transition-colors duration-200"
                           onClick={() => {
                             setSearchQuery(term);
                             handleSearchChange({ target: { value: term } });

@@ -149,7 +149,7 @@ export default function About() {
         <div className="flex flex-col md:flex-row items-center">
           {/* Right Image - 50% - Moved to top on mobile */}
           <div className="w-full md:w-1/2 relative order-first md:order-last mb-8 md:mb-0">
-            <div className="absolute -top-6 -left-6 w-full h-full bg-purple-600 rounded-xl opacity-10 transform rotate-2 hidden md:block"></div>
+            <div className="absolute -top-6 -left-6 w-full h-full bg-[#000080] rounded-xl opacity-10 transform rotate-2 hidden md:block"></div>
             <div className="absolute -bottom-6 -right-6 w-full h-full bg-indigo-600 rounded-xl opacity-10 transform -rotate-2 hidden md:block"></div>
             <div className="relative h-full overflow-hidden rounded-xl shadow-2xl cursor-pointer group" onClick={openModal}>
               <img 
@@ -165,7 +165,7 @@ export default function About() {
               </div>
               <div className="absolute inset-0 bg-black/30 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
                 <span className="bg-white rounded-full p-4 transform transition-transform duration-300 hover:scale-110">
-                  <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 text-purple-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 text-[#000080]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 8V4m0 0h4M4 4l5 5m11-1V4m0 0h-4m4 0l-5 5M4 16v4m0 0h4m-4 0l5-5m11 5v-4m0 4h-4m4 0l-5-5" />
                   </svg>
                 </span>
@@ -176,13 +176,13 @@ export default function About() {
           {/* Left Content - 50% - Moved to bottom on mobile */}
           <div className="w-full md:w-1/2 md:pr-12 order-last md:order-first">
             <div className="flex flex-col items-start text-left">
-            <div className="inline-block px-4 py-1.5 bg-purple-100 text-purple-700 rounded-full text-sm font-medium tracking-wide mb-4">
+            <div className="inline-block px-4 py-1.5 bg-[#000080]/20 text-[#000080] rounded-full text-sm font-medium tracking-wide mb-4">
               ABOUT US
             </div>
             <h2 className="text-2xl md:text-3xl font-bold text-gray-900 leading-tight mb-6 uppercase">
-              We are <span className="text-purple-600 relative inline-block">
+              We are <span className="text-[#000080] relative inline-block">
                 Alhamd Technologies
-                <span className="absolute bottom-0 left-0 w-full h-1 bg-purple-600 opacity-30 rounded"></span>
+                <span className="absolute bottom-0 left-0 w-full h-1 bg-[#000080] opacity-30 rounded"></span>
               </span>
             </h2>
             <p className="text-gray-600 text-lg leading-relaxed mb-6 text-left">
@@ -194,18 +194,18 @@ export default function About() {
             </p>
             <div className="mt-8 grid grid-cols-1 md:grid-cols-2 gap-6">
               {/* CNC Machining */}
-              <div className="bg-white rounded-xl overflow-hidden shadow-sm border border-purple-100 hover:border-purple-300 hover:shadow-md transition-all duration-300 group">
-                <div className="flex items-center p-4 bg-gradient-to-r from-purple-50 to-white">
-                  <div className="bg-purple-100 rounded-lg p-3 mr-4 group-hover:bg-purple-200 transition-all duration-300">
-                    <svg className="w-6 h-6 text-purple-600" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <div className="bg-white rounded-xl overflow-hidden shadow-sm border border-[#000080]/20 hover:border-[#898989] hover:shadow-md transition-all duration-300 group">
+                <div className="flex items-center p-4 bg-gradient-to-r from-[#000080]/10 to-white">
+                  <div className="bg-[#000080]/20 rounded-lg p-3 mr-4 group-hover:bg-[#000080]/30 transition-all duration-300">
+                    <svg className="w-6 h-6 text-[#000080]" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4" />
                     </svg>
                   </div>
                   <h3 className="font-bold text-lg text-gray-800">CNC Machining</h3>
                 </div>
-                <div className="p-4 pt-2 border-t border-purple-50">
+                <div className="p-4 pt-2 border-t border-[#000080]/10">
                   <p className="text-gray-600 text-left">Precision CNC machining for complex parts with tight tolerances. Our 5-axis machines create intricate components for multiple industries.</p>
-                  <div className="mt-3 flex items-center text-purple-600 text-sm font-medium">
+                  <div className="mt-3 flex items-center text-[#000080] text-sm font-medium">
                     <span>Learn more</span>
                     <svg className="w-4 h-4 ml-1 group-hover:translate-x-1 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 5l7 7-7 7" />
@@ -215,18 +215,18 @@ export default function About() {
               </div>
               
               {/* Drilling & Tapping */}
-              <div className="bg-white rounded-xl overflow-hidden shadow-sm border border-purple-100 hover:border-purple-300 hover:shadow-md transition-all duration-300 group">
-                <div className="flex items-center p-4 bg-gradient-to-r from-purple-50 to-white">
-                  <div className="bg-purple-100 rounded-lg p-3 mr-4 group-hover:bg-purple-200 transition-all duration-300">
-                    <svg className="w-6 h-6 text-purple-600" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <div className="bg-white rounded-xl overflow-hidden shadow-sm border border-[#000080]/20 hover:border-[#898989] hover:shadow-md transition-all duration-300 group">
+                <div className="flex items-center p-4 bg-gradient-to-r from-[#000080]/10 to-white">
+                  <div className="bg-[#000080]/20 rounded-lg p-3 mr-4 group-hover:bg-[#000080]/30 transition-all duration-300">
+                    <svg className="w-6 h-6 text-[#000080]" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 6V4m0 2a2 2 0 100 4m0-4a2 2 0 110 4m-6 8a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4m6 6v10m6-2a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4" />
                     </svg>
                   </div>
                   <h3 className="font-bold text-lg text-gray-800">Drilling & Tapping</h3>
                 </div>
-                <div className="p-4 pt-2 border-t border-purple-50">
+                <div className="p-4 pt-2 border-t border-[#000080]/10">
                   <p className="text-gray-600 text-left">Expert drilling and tapping services with exact depth control and perfect thread pitch alignment for diverse applications.</p>
-                  <div className="mt-3 flex items-center text-purple-600 text-sm font-medium">
+                  <div className="mt-3 flex items-center text-[#000080] text-sm font-medium">
                     <span>Learn more</span>
                     <svg className="w-4 h-4 ml-1 group-hover:translate-x-1 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 5l7 7-7 7" />
@@ -236,18 +236,18 @@ export default function About() {
               </div>
               
               {/* Band Saw Cutting */}
-              <div className="bg-white rounded-xl overflow-hidden shadow-sm border border-purple-100 hover:border-purple-300 hover:shadow-md transition-all duration-300 group">
-                <div className="flex items-center p-4 bg-gradient-to-r from-purple-50 to-white">
-                  <div className="bg-purple-100 rounded-lg p-3 mr-4 group-hover:bg-purple-200 transition-all duration-300">
-                    <svg className="w-6 h-6 text-purple-600" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <div className="bg-white rounded-xl overflow-hidden shadow-sm border border-[#000080]/20 hover:border-[#898989] hover:shadow-md transition-all duration-300 group">
+                <div className="flex items-center p-4 bg-gradient-to-r from-[#000080]/10 to-white">
+                  <div className="bg-[#000080]/20 rounded-lg p-3 mr-4 group-hover:bg-[#000080]/30 transition-all duration-300">
+                    <svg className="w-6 h-6 text-[#000080]" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M14 5l7 7m0 0l-7 7m7-7H3" />
                     </svg>
                   </div>
                   <h3 className="font-bold text-lg text-gray-800">Band Saw Cutting</h3>
                 </div>
-                <div className="p-4 pt-2 border-t border-purple-50">
+                <div className="p-4 pt-2 border-t border-[#000080]/10">
                   <p className="text-gray-600 text-left">Precise material cutting with advanced band saw technology for clean, accurate cuts on various metals and alloys with minimal waste.</p>
-                  <div className="mt-3 flex items-center text-purple-600 text-sm font-medium">
+                  <div className="mt-3 flex items-center text-[#000080] text-sm font-medium">
                     <span>Learn more</span>
                     <svg className="w-4 h-4 ml-1 group-hover:translate-x-1 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 5l7 7-7 7" />
@@ -257,18 +257,18 @@ export default function About() {
               </div>
               
               {/* Custom Solutions */}
-              <div className="bg-white rounded-xl overflow-hidden shadow-sm border border-purple-100 hover:border-purple-300 hover:shadow-md transition-all duration-300 group">
-                <div className="flex items-center p-4 bg-gradient-to-r from-purple-50 to-white">
-                  <div className="bg-purple-100 rounded-lg p-3 mr-4 group-hover:bg-purple-200 transition-all duration-300">
-                    <svg className="w-6 h-6 text-purple-600" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <div className="bg-white rounded-xl overflow-hidden shadow-sm border border-[#000080]/20 hover:border-[#898989] hover:shadow-md transition-all duration-300 group">
+                <div className="flex items-center p-4 bg-gradient-to-r from-[#000080]/10 to-white">
+                  <div className="bg-[#000080]/20 rounded-lg p-3 mr-4 group-hover:bg-[#000080]/30 transition-all duration-300">
+                    <svg className="w-6 h-6 text-[#000080]" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M11 4a2 2 0 114 0v1a1 1 0 001 1h3a1 1 0 011 1v3a1 1 0 01-1 1h-1a2 2 0 100 4h1a1 1 0 011 1v3a1 1 0 01-1 1h-3a1 1 0 01-1-1v-1a2 2 0 10-4 0v1a1 1 0 01-1 1H7a1 1 0 01-1-1v-3a1 1 0 00-1-1H4a2 2 0 110-4h1a1 1 0 001-1V7a1 1 0 011-1h3a1 1 0 001-1V4z" />
                     </svg>
                   </div>
                   <h3 className="font-bold text-lg text-gray-800">Custom Solutions</h3>
                 </div>
-                <div className="p-4 pt-2 border-t border-purple-50">
+                <div className="p-4 pt-2 border-t border-[#000080]/10">
                   <p className="text-gray-600 text-left">Tailored engineering solutions for unique challenges. We design, prototype, and manufacture custom parts that perfectly meet your specific requirements.</p>
-                  <div className="mt-3 flex items-center text-purple-600 text-sm font-medium">
+                  <div className="mt-3 flex items-center text-[#000080] text-sm font-medium">
                     <span>Learn more</span>
                     <svg className="w-4 h-4 ml-1 group-hover:translate-x-1 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 5l7 7-7 7" />
@@ -288,7 +288,7 @@ export default function About() {
           {/* Loading Indicator */}
           {isLoading && (
             <div className="absolute inset-0 flex items-center justify-center z-60">
-              <div className="animate-spin rounded-full h-16 w-16 border-t-2 border-b-2 border-purple-500"></div>
+              <div className="animate-spin rounded-full h-16 w-16 border-t-2 border-b-2 border-[#000080]"></div>
             </div>
           )}
           
@@ -338,7 +338,7 @@ export default function About() {
                           <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/30 to-transparent p-4 flex flex-col justify-end">
                             <p className="text-white font-medium opacity-0 group-hover:opacity-100 transform group-hover:translate-y-0 translate-y-4 transition-all duration-300">{image.alt}</p>
                           </div>
-                          <div className="absolute inset-0 bg-purple-600/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                          <div className="absolute inset-0 bg-[#000080]/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
                         </div>
                       </div>
                     ))}
@@ -426,7 +426,7 @@ export default function About() {
                       <button
                         key={index}
                         className={`relative flex-shrink-0 h-16 w-20 rounded-md overflow-hidden border-2 transition-all ${
-                          selectedImageIndex === index ? 'border-purple-500 scale-110' : 'border-transparent opacity-70 hover:opacity-100'
+                          selectedImageIndex === index ? 'border-[#000080] scale-110' : 'border-transparent opacity-70 hover:opacity-100'
                         }`}
                         onClick={(e) => {
                           e.stopPropagation();

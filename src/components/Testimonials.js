@@ -3,22 +3,22 @@ import { isBrowser } from '../utils/clientUtils';
 
 export default function Testimonials() {
   return (
-    <section id="testimonials" className="flex items-center bg-gradient-to-br from-purple-700 to-purple-900 text-white h-screen">
+    <section id="testimonials" className="flex items-center bg-gradient-to-br from-[#000080] to-[#000080] text-white h-screen">
       <div className="container mx-auto px-4 md:px-8 py-4 md:py-6 w-full">
         <div className="flex flex-col md:flex-row md:justify-between md:items-center mb-4">
           <div className="md:max-w-2xl">
-            <div className="inline-block px-3 py-1 bg-purple-100 text-purple-800 rounded-full text-sm font-medium tracking-wide mb-3">
+            <div className="inline-block px-3 py-1 bg-[#000080]/20 text-[#000080] rounded-full text-sm font-medium tracking-wide mb-3">
               TESTIMONIALS
             </div>
             <h2 className="text-2xl md:text-3xl font-bold text-white mb-4">
-              What Our <span className="text-purple-200">Clients Say</span>
+              What Our <span className="text-white">Clients Say</span>
             </h2>
-            <p className="text-purple-100 text-base max-w-3xl">
+            <p className="text-[#000080]/20 text-base max-w-3xl">
               Don't just take our word for it. Here's what some of our valued clients have to say about our precision machining services.
             </p>
           </div>
           <div className="mt-6 md:mt-0 w-full md:w-auto">
-            <a href="#contact" className="w-full md:w-auto inline-block px-6 py-3 bg-white text-purple-800 font-medium rounded-lg hover:bg-purple-100 transition-all duration-300 shadow-lg text-center">
+            <a href="#contact" className="w-full md:w-auto inline-block px-6 py-3 bg-white text-[#000080] font-medium rounded-lg hover:bg-[#000080]/20 transition-all duration-300 shadow-lg text-center">
               Work With Us
             </a>
           </div>
@@ -135,9 +135,9 @@ function TestimonialSlider() {
   return (
     <div className="bg-transparent p-2 md:p-4 rounded-3xl shadow-2xl text-white relative overflow-hidden h-full backdrop-blur-sm border border-white/10">
       {/* Decorative elements */}
-      <div className="absolute -top-32 -right-32 w-96 h-96 rounded-full bg-purple-500 opacity-20 blur-xl"></div>
-      <div className="absolute -bottom-32 -left-32 w-96 h-96 rounded-full bg-violet-400 opacity-20 blur-xl"></div>
-      <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-1/2 h-1/2 bg-purple-400 opacity-10 rounded-full blur-3xl"></div>
+      <div className="absolute -top-32 -right-32 w-96 h-96 rounded-full bg-[#000080] opacity-20 blur-xl"></div>
+      <div className="absolute -bottom-32 -left-32 w-96 h-96 rounded-full bg-[#898989] opacity-20 blur-xl"></div>
+      <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-1/2 h-1/2 bg-[#898989] opacity-10 rounded-full blur-3xl"></div>
       
       {/* Slider container */}
       <div className="flex flex-col justify-between h-full">
@@ -169,7 +169,7 @@ function TestimonialSlider() {
                         />
                         <div>
                           <h4 className="font-bold text-white text-lg">{testimonial.name}</h4>
-                          <p className="text-purple-200 text-sm">{testimonial.role}</p>
+                          <p className="text-white text-sm">{testimonial.role}</p>
                         </div>
                       </div>
                       

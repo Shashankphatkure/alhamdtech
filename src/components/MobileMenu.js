@@ -28,7 +28,7 @@ export default function MobileMenu({ isOpen, onClose, activeSection }) {
     >
       <div className="bg-white w-full h-screen shadow-xl transform transition-transform duration-300 animate-slide-in-right flex flex-col">
         {/* Header with gradient background */}
-        <div className="bg-gradient-to-r from-purple-600 to-violet-600 p-5 flex justify-between items-center">
+        <div className="bg-gradient-to-r from-[#000080] to-[#000080] p-5 flex justify-between items-center">
           <h2 className="text-lg font-bold text-white">Menu</h2>
           <button 
             onClick={onClose}
@@ -50,8 +50,8 @@ export default function MobileMenu({ isOpen, onClose, activeSection }) {
                   href={`#${item}`}
                   className={`flex items-center py-3 px-4 rounded-lg font-medium transition-colors ${
                     activeSection === item 
-                      ? 'bg-purple-100 text-purple-700 shadow-sm' 
-                      : 'text-gray-700 hover:bg-purple-50 hover:text-purple-700'
+                      ? 'bg-[#000080]/20 text-[#000080] shadow-sm' 
+                      : 'text-gray-700 hover:bg-[#000080]/10 hover:text-[#000080]'
                   }`}
                 onClick={onClose}
               >
@@ -100,13 +100,13 @@ export default function MobileMenu({ isOpen, onClose, activeSection }) {
         <div className="p-5 border-t border-gray-200 bg-gray-50">
           <div className="mb-5 space-y-4">
             <div className="flex items-center text-gray-600">
-              <svg className="w-5 h-5 mr-3 text-purple-600" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+              <svg className="w-5 h-5 mr-3 text-[#000080]" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 8V5z" />
               </svg>
               <span className="text-sm">+1 (234) 567-8900</span>
             </div>
             <div className="flex items-center text-gray-600">
-              <svg className="w-5 h-5 mr-3 text-purple-600" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+              <svg className="w-5 h-5 mr-3 text-[#000080]" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
               </svg>
               <span className="text-sm">info@company.com</span>
@@ -117,7 +117,7 @@ export default function MobileMenu({ isOpen, onClose, activeSection }) {
             onClick={onClose}
             className="group relative block w-full py-3.5 text-center text-white rounded-lg font-medium overflow-hidden"
           >
-            <span className="absolute inset-0 bg-gradient-to-r from-purple-600 to-violet-600 transition-all duration-300 group-hover:from-purple-700 group-hover:to-violet-700"></span>
+            <span className="absolute inset-0 bg-gradient-to-r from-[#000080] to-[#000080] transition-all duration-300 group-hover:from-[#000080] group-hover:to-[#000080]"></span>
             <span className="absolute inset-0 opacity-0 group-hover:opacity-20 bg-[radial-gradient(circle_at_center,_rgba(255,255,255,0.4)_0%,_transparent_70%)] transition-opacity duration-300"></span>
             <span className="absolute bottom-0 left-0 right-0 h-1 bg-gradient-to-r from-transparent via-white/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></span>
             <span className="relative flex items-center justify-center">
@@ -126,7 +126,7 @@ export default function MobileMenu({ isOpen, onClose, activeSection }) {
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
               </svg>
             </span>
-            <span className="absolute inset-0 shadow-md group-hover:shadow-lg group-hover:shadow-purple-500/25 transition-shadow duration-300"></span>
+            <span className="absolute inset-0 shadow-md group-hover:shadow-lg group-hover:shadow-[#000080]/100/25 transition-shadow duration-300"></span>
           </a>
         </div>
         
