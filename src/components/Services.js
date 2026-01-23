@@ -349,7 +349,7 @@ export default function Services() {
   }, []);
   
   return (
-    <section id="services" className="py-12 bg-gradient-to-br from-white via-[#000080]/10 to-[#000080]/10 relative overflow-hidden">
+    <section id="services" className="py-12 bg-white relative overflow-hidden">
       {/* Background decorative elements */}
       <div className="absolute -top-64 -right-64 w-96 h-96 rounded-full bg-[#000080]/20/40 blur-3xl"></div>
       <div className="absolute -bottom-32 -left-32 w-80 h-80 rounded-full bg-[#000080]/20/40 blur-3xl"></div>
@@ -591,4 +591,5 @@ export default function Services() {
       `}</style>
     </section>
   );
+
 } 
