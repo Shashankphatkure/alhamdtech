@@ -3,9 +3,9 @@ import { isBrowser } from '../utils/clientUtils';
 
 export default function Testimonials() {
   return (
-    <section id="testimonials" className="flex items-center bg-gradient-to-br from-[#000080] to-[#000080] text-white h-[670px]">
-      <div className="container mx-auto px-4 md:px-8 py-4 md:py-6 w-full">
-        <div className="flex flex-col md:flex-row md:justify-between md:items-center mb-4">
+    <section id="testimonials" className="flex items-center bg-gradient-to-br from-[#000080] to-[#000080] text-white overflow-hidden w-full max-w-full">
+      <div className="container mx-auto px-4 md:px-8 pb-4 md:pb-6 w-full max-w-full overflow-hidden">
+        <div className="flex flex-col md:flex-row md:justify-between md:items-center mb-4 pb-4">
           <div className="md:max-w-2xl">
             <div className="inline-block px-3 py-1 bg-[#000080]/20 text-[#000080] rounded-full text-sm font-medium tracking-wide mb-3">
               TESTIMONIALS
@@ -24,7 +24,7 @@ export default function Testimonials() {
           </div>
         </div>
         
-        <div className="h-[400px] md:h-[420px] pb-2">
+        <div className="overflow-hidden w-full">
           <TestimonialSlider />
         </div>
       </div>
@@ -128,11 +128,8 @@ function TestimonialSlider() {
   }, [visibleSlides]);
 
   return (
-    <div className="bg-transparent p-2 md:p-4 rounded-3xl shadow-2xl text-white relative overflow-hidden h-full backdrop-blur-sm border border-white/10">
-      {/* Decorative elements */}
-      <div className="absolute -top-32 -right-32 w-96 h-96 rounded-full bg-[#000080] opacity-20 blur-xl"></div>
-      <div className="absolute -bottom-32 -left-32 w-96 h-96 rounded-full bg-[#898989] opacity-20 blur-xl"></div>
-      <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-1/2 h-1/2 bg-[#898989] opacity-10 rounded-full blur-3xl"></div>
+    <div className="relative h-full overflow-hidden">
+      {/* Decorative elements - hidden to prevent overflow */}
       
       {/* Slider container */}
       <div className="flex flex-col justify-between h-full">
@@ -142,15 +139,16 @@ function TestimonialSlider() {
             style={{ transform: `translateX(-${currentIndex * (100 / visibleSlides)}%)` }}
           >
             {/* Testimonial slides - responsive */}
-            <div className="flex w-full">
+            <div className="flex">
               {testimonials.map((testimonial) => (
                 <div 
                   key={testimonial.id} 
-                  className={`${visibleSlides === 1 ? 'w-full' : 'w-1/3'} px-2 flex-shrink-0`}
+                  style={{ width: `${100 / visibleSlides}%` }}
+                  className="px-2 flex-shrink-0"
                 >
-                  <div className="bg-white/10 backdrop-blur-md p-3 md:p-5 rounded-2xl h-full flex flex-col hover:bg-white/15 hover:scale-105 transition-all duration-500 shadow-xl border border-white/10">
+                  <div className="bg-white/10 backdrop-blur-md p-3 md:p-5 rounded-lg h-full flex flex-col hover:bg-white/15 hover:scale-105 transition-all duration-500 shadow-xl border border-white/10">
                     <div className="mb-4">
-                      <blockquote className="text-lg italic mb-6 flex-grow leading-relaxed font-light">
+                      <blockquote className="text-lg mb-2 flex-grow leading-relaxed font-light">
                         "{testimonial.quote}"
                       </blockquote>
                     </div>
