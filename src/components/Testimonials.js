@@ -3,38 +3,36 @@ import { isBrowser } from '../utils/clientUtils';
 
 export default function Testimonials() {
   return (
-    <section id="testimonials" className="flex items-center bg-gradient-to-br from-[#000080] to-[#000080] text-white overflow-hidden w-full max-w-full min-h-[600px] md:min-h-[700px] py-12 md:py-16 relative">
+    <section id="testimonials" className="bg-[#000080] text-white overflow-hidden w-full py-14 sm:py-12 md:py-16 lg:py-20 relative min-h-[500px] sm:min-h-0">
       {/* Grid background effect */}
       <div
         className="absolute inset-0 pointer-events-none"
         style={{
-          backgroundImage: 'linear-gradient(to right, rgba(255,255,255,0.15) 1px, transparent 1px), linear-gradient(to bottom, rgba(255,255,255,0.15) 1px, transparent 1px)',
-          backgroundSize: '40px 40px'
+          backgroundImage: 'linear-gradient(to right, rgba(255,255,255,0.1) 1px, transparent 1px), linear-gradient(to bottom, rgba(255,255,255,0.1) 1px, transparent 1px)',
+          backgroundSize: '30px 30px'
         }}
       ></div>
-      <div className="container mx-auto px-4 md:px-8 pb-4 md:pb-6 w-full max-w-full overflow-hidden relative z-10">
-        <div className="flex flex-col md:flex-row md:justify-between md:items-center mb-4 pb-4">
-          <div className="md:max-w-2xl">
-            <div className="inline-block px-3 py-1 bg-[#000080]/20 text-[#000080] rounded-full text-sm font-medium tracking-wide mb-3">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+        <div className="flex flex-col md:flex-row md:justify-between md:items-center gap-4 md:gap-6 mb-8 md:mb-10">
+          <div className="flex-1">
+            <div className="inline-block px-3 py-1 bg-white/10 text-white rounded-full text-xs sm:text-sm font-medium tracking-wide mb-3">
               TESTIMONIALS
             </div>
-            <h2 className="text-2xl md:text-3xl font-bold text-white mb-4">
-              What Our <span className="text-white">Clients Say</span>
+            <h2 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold text-white mb-3">
+              What Our Clients Say
             </h2>
-            <p className="text-white/70 text-base max-w-3xl">
+            <p className="text-white/70 text-sm sm:text-base max-w-2xl">
               Don't just take our word for it. Here's what some of our valued clients have to say about our precision machining services.
             </p>
           </div>
-          <div className="mt-6 md:mt-0 w-full md:w-auto">
-            <a href="#contact" className="w-full md:w-auto inline-block px-6 py-3 bg-white text-[#000080] font-medium rounded-lg hover:bg-[#000080]/20 transition-all duration-300 shadow-lg text-center">
+          <div className="flex-shrink-0">
+            <a href="#contact" className="inline-block px-5 sm:px-6 py-2.5 sm:py-3 bg-white text-[#000080] font-medium rounded-lg hover:bg-white/90 transition-all duration-300 shadow-lg text-sm sm:text-base">
               Work With Us
             </a>
           </div>
         </div>
-        
-        <div className="overflow-hidden w-full">
-          <TestimonialSlider />
-        </div>
+
+        <TestimonialSlider />
       </div>
     </section>
   );
@@ -82,46 +80,60 @@ function TestimonialSlider() {
 
   const [currentIndex, setCurrentIndex] = useState(0);
   const [isAnimating, setIsAnimating] = useState(false);
-  
-  // Calculate visible slides based on screen size
   const [visibleSlides, setVisibleSlides] = useState(1);
-  
+
   useEffect(() => {
     const handleResize = () => {
-      // Only run on client side
       if (!isBrowser()) return;
-      
-      // Set visible slides based on screen width
-      setVisibleSlides(window.innerWidth >= 768 ? 3 : 1);
+
+      const width = window.innerWidth;
+      if (width >= 1024) {
+        setVisibleSlides(3);
+      } else if (width >= 640) {
+        setVisibleSlides(2);
+      } else {
+        setVisibleSlides(1);
+      }
     };
-    
-    // Initial setup
+
     handleResize();
-    
-    // Add event listener for window resize
+
     if (isBrowser()) {
       window.addEventListener('resize', handleResize);
-      
-      // Cleanup
       return () => window.removeEventListener('resize', handleResize);
     }
   }, []);
-  
+
+  // Reset currentIndex when visibleSlides changes
+  useEffect(() => {
+    const maxIndex = testimonials.length - visibleSlides;
+    if (currentIndex > maxIndex) {
+      setCurrentIndex(Math.max(0, maxIndex));
+    }
+  }, [visibleSlides, currentIndex, testimonials.length]);
+
+  const maxIndex = testimonials.length - visibleSlides;
+
   const nextSlide = () => {
-    if (!isAnimating) {
+    if (!isAnimating && currentIndex < maxIndex) {
       setIsAnimating(true);
-      setCurrentIndex((prevIndex) => (prevIndex + 1) % (testimonials.length - (visibleSlides - 1)));
+      setCurrentIndex((prev) => prev + 1);
+      setTimeout(() => setIsAnimating(false), 500);
+    } else if (!isAnimating) {
+      setIsAnimating(true);
+      setCurrentIndex(0);
       setTimeout(() => setIsAnimating(false), 500);
     }
   };
-  
+
   const prevSlide = () => {
-    if (!isAnimating) {
+    if (!isAnimating && currentIndex > 0) {
       setIsAnimating(true);
-      setCurrentIndex((prevIndex) => 
-        (prevIndex - 1 + (testimonials.length - (visibleSlides - 1))) % 
-        (testimonials.length - (visibleSlides - 1))
-      );
+      setCurrentIndex((prev) => prev - 1);
+      setTimeout(() => setIsAnimating(false), 500);
+    } else if (!isAnimating) {
+      setIsAnimating(true);
+      setCurrentIndex(maxIndex);
       setTimeout(() => setIsAnimating(false), 500);
     }
   };
@@ -131,95 +143,84 @@ function TestimonialSlider() {
     const interval = setInterval(() => {
       nextSlide();
     }, 5000);
-    
+
     return () => clearInterval(interval);
-  }, [visibleSlides]);
+  }, [visibleSlides, currentIndex]);
+
+  const slideWidth = 100 / visibleSlides;
 
   return (
-    <div className="relative h-full overflow-hidden">
-      {/* Decorative elements - hidden to prevent overflow */}
-      
+    <div className="relative">
       {/* Slider container */}
-      <div className="flex flex-col justify-between h-full">
-        <div className="relative z-10 overflow-hidden flex-grow">
-          <div 
-            className="transition-all duration-500 ease-in-out w-full h-full flex items-center"
-            style={{ transform: `translateX(-${currentIndex * (100 / visibleSlides)}%)` }}
-          >
-            {/* Testimonial slides - responsive */}
-            <div className="flex">
-              {testimonials.map((testimonial) => (
-                <div 
-                  key={testimonial.id} 
-                  style={{ width: `${100 / visibleSlides}%` }}
-                  className="px-2 flex-shrink-0"
-                >
-                  <div className="bg-white/10 backdrop-blur-md p-3 md:p-5 rounded-lg h-full flex flex-col hover:bg-white/15 hover:scale-105 transition-all duration-500 shadow-xl border border-white/10">
-                    <div className="mb-4">
-                      <blockquote className="text-lg mb-2 flex-grow leading-relaxed font-light">
-                        "{testimonial.quote}"
-                      </blockquote>
-                    </div>
-                    
-                    <div className="mt-auto">
-                      <div>
-                        <h4 className="font-bold text-white text-lg">{testimonial.name}</h4>
-                        <p className="text-white text-sm">{testimonial.role}</p>
-                      </div>
-                      
-                      <div className="flex mt-3">
-                        {[...Array(testimonial.rating)].map((_, i) => (
-                          <svg key={i} className="w-4 h-4 text-yellow-300" fill="currentColor" viewBox="0 0 20 20">
-                            <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
-                          </svg>
-                        ))}
-                      </div>
-                    </div>
+      <div className="overflow-hidden">
+        <div
+          className="flex transition-transform duration-500 ease-in-out"
+          style={{ transform: `translateX(-${currentIndex * slideWidth}%)` }}
+        >
+          {testimonials.map((testimonial) => (
+            <div
+              key={testimonial.id}
+              className="flex-shrink-0 px-2 sm:px-3"
+              style={{ width: `${slideWidth}%` }}
+            >
+              <div className="bg-white/10 backdrop-blur-sm p-4 sm:p-5 lg:p-6 rounded-lg h-full flex flex-col hover:bg-white/15 transition-all duration-300 border border-white/10">
+                <blockquote className="text-sm sm:text-base lg:text-lg mb-4 flex-grow leading-relaxed">
+                  "{testimonial.quote}"
+                </blockquote>
+
+                <div className="mt-auto pt-4 border-t border-white/10">
+                  <h4 className="font-semibold text-white text-base sm:text-lg">{testimonial.name}</h4>
+                  <p className="text-white/70 text-xs sm:text-sm">{testimonial.role}</p>
+
+                  <div className="flex mt-2">
+                    {[...Array(testimonial.rating)].map((_, i) => (
+                      <svg key={i} className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-yellow-400" fill="currentColor" viewBox="0 0 20 20">
+                        <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                      </svg>
+                    ))}
                   </div>
                 </div>
-              ))}
+              </div>
             </div>
-          </div>
-          
-          {/* Navigation arrows */}
-          <div className="absolute top-1/2 -translate-y-1/2 w-full flex justify-between px-2 z-20 left-0">
-            <button 
-              onClick={prevSlide}
-              className="bg-white/10 hover:bg-white/30 rounded-full p-2 backdrop-blur-md transition-all duration-300 shadow-lg border border-white/10 group"
-              aria-label="Previous testimonial"
-            >
-              <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 text-white group-hover:-translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
-              </svg>
-            </button>
-            <button 
-              onClick={nextSlide}
-              className="bg-white/10 hover:bg-white/30 rounded-full p-2 backdrop-blur-md transition-all duration-300 shadow-lg border border-white/10 group"
-              aria-label="Next testimonial"
-            >
-              <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 text-white group-hover:translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-              </svg>
-            </button>
-          </div>
-        </div>
-        
-        {/* Navigation dots */}
-        <div className="flex justify-center mt-2 space-x-2 pb-1">
-          {Array.from({ length: testimonials.length - (visibleSlides - 1) }).map((_, index) => (
-            <button
-              key={index}
-              onClick={() => setCurrentIndex(index)}
-              className={`w-2 h-2 rounded-full transition-all duration-300 ${
-                currentIndex === index 
-                  ? "bg-white w-6" 
-                  : "bg-white/40 hover:bg-white/70"
-              }`}
-              aria-label={`Go to slide ${index + 1}`}
-            />
           ))}
         </div>
       </div>
+
+      {/* Navigation arrows */}
+      <button
+        onClick={prevSlide}
+        className="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-1 sm:-translate-x-2 bg-white/20 hover:bg-white/40 rounded-full p-1.5 sm:p-2 backdrop-blur-sm transition-all duration-300 z-20"
+        aria-label="Previous testimonial"
+      >
+        <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 sm:h-5 sm:w-5 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
+        </svg>
+      </button>
+      <button
+        onClick={nextSlide}
+        className="absolute right-0 top-1/2 -translate-y-1/2 translate-x-1 sm:translate-x-2 bg-white/20 hover:bg-white/40 rounded-full p-1.5 sm:p-2 backdrop-blur-sm transition-all duration-300 z-20"
+        aria-label="Next testimonial"
+      >
+        <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 sm:h-5 sm:w-5 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+        </svg>
+      </button>
+
+      {/* Navigation dots */}
+      <div className="flex justify-center mt-6 gap-2">
+        {Array.from({ length: maxIndex + 1 }).map((_, index) => (
+          <button
+            key={index}
+            onClick={() => setCurrentIndex(index)}
+            className={`h-2 rounded-full transition-all duration-300 ${
+              currentIndex === index
+                ? "bg-white w-6"
+                : "bg-white/40 hover:bg-white/70 w-2"
+            }`}
+            aria-label={`Go to slide ${index + 1}`}
+          />
+        ))}
+      </div>
     </div>
   );
-} 
+}
