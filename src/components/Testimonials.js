@@ -186,40 +186,42 @@ function TestimonialSlider() {
         </div>
       </div>
 
-      {/* Navigation arrows */}
-      <button
-        onClick={prevSlide}
-        className="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-1 sm:-translate-x-2 bg-white/20 hover:bg-white/40 rounded-full p-1.5 sm:p-2 backdrop-blur-sm transition-all duration-300 z-20"
-        aria-label="Previous testimonial"
-      >
-        <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 sm:h-5 sm:w-5 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
-        </svg>
-      </button>
-      <button
-        onClick={nextSlide}
-        className="absolute right-0 top-1/2 -translate-y-1/2 translate-x-1 sm:translate-x-2 bg-white/20 hover:bg-white/40 rounded-full p-1.5 sm:p-2 backdrop-blur-sm transition-all duration-300 z-20"
-        aria-label="Next testimonial"
-      >
-        <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 sm:h-5 sm:w-5 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-        </svg>
-      </button>
+      {/* Navigation arrows and dots */}
+      <div className="flex justify-center items-center mt-6 gap-4">
+        <button
+          onClick={prevSlide}
+          className="bg-white/20 hover:bg-white/40 rounded-full p-2 sm:p-2.5 backdrop-blur-sm transition-all duration-300"
+          aria-label="Previous testimonial"
+        >
+          <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 sm:h-5 sm:w-5 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
+          </svg>
+        </button>
 
-      {/* Navigation dots */}
-      <div className="flex justify-center mt-6 gap-2">
-        {Array.from({ length: maxIndex + 1 }).map((_, index) => (
-          <button
-            key={index}
-            onClick={() => setCurrentIndex(index)}
-            className={`h-2 rounded-full transition-all duration-300 ${
-              currentIndex === index
-                ? "bg-white w-6"
-                : "bg-white/40 hover:bg-white/70 w-2"
-            }`}
-            aria-label={`Go to slide ${index + 1}`}
-          />
-        ))}
+        <div className="flex gap-2">
+          {Array.from({ length: maxIndex + 1 }).map((_, index) => (
+            <button
+              key={index}
+              onClick={() => setCurrentIndex(index)}
+              className={`h-2 rounded-full transition-all duration-300 ${
+                currentIndex === index
+                  ? "bg-white w-6"
+                  : "bg-white/40 hover:bg-white/70 w-2"
+              }`}
+              aria-label={`Go to slide ${index + 1}`}
+            />
+          ))}
+        </div>
+
+        <button
+          onClick={nextSlide}
+          className="bg-white/20 hover:bg-white/40 rounded-full p-2 sm:p-2.5 backdrop-blur-sm transition-all duration-300"
+          aria-label="Next testimonial"
+        >
+          <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 sm:h-5 sm:w-5 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+          </svg>
+        </button>
       </div>
     </div>
   );
