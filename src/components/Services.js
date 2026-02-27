@@ -125,13 +125,13 @@ const ServiceModal = ({ service, isOpen, onClose }) => {
   return (
     <div className="fixed inset-0 z-50 flex items-center justify-center p-2 sm:p-4 bg-black/50 backdrop-blur-sm" onClick={onClose}>
       <div 
-        className="bg-white dark:bg-gray-900 rounded-xl shadow-2xl w-full max-w-6xl overflow-hidden animate-modal"
+        className="bg-white rounded-xl shadow-2xl w-full max-w-3xl overflow-hidden animate-modal relative max-h-[90vh] overflow-y-auto"
         onClick={e => e.stopPropagation()}
       >
-          <div className="absolute top-2 sm:top-4 right-2 sm:right-4 z-10">
-            <button 
+          <div className="absolute top-3 sm:top-4 right-3 sm:right-4 z-10">
+            <button
               onClick={onClose}
-              className="p-1.5 sm:p-2 rounded-full bg-white/80 dark:bg-gray-800/80 hover:bg-white dark:hover:bg-gray-800 text-gray-600 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white transition-colors shadow-md"
+              className="p-1.5 sm:p-2 rounded-full bg-gray-100 hover:bg-gray-200 text-gray-600 hover:text-gray-900 transition-colors shadow-md"
               aria-label="Close modal"
             >
               <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 sm:h-6 sm:w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -139,111 +139,68 @@ const ServiceModal = ({ service, isOpen, onClose }) => {
               </svg>
             </button>
           </div>
-          
-        <div className="flex flex-col lg:flex-row">
-          {/* Left side - Image */}
-          <div className="lg:w-2/5 h-48 sm:h-64 lg:h-auto relative bg-gradient-to-r from-[#000080] to-[#000080]">
-            <div className="absolute inset-0 flex items-center justify-center">
-              <svg xmlns="http://www.w3.org/2000/svg" className="h-16 sm:h-24 w-16 sm:w-24 text-white/80" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d={service.icon} />
-              </svg>
-            </div>
-            <div className="absolute inset-0 bg-black/20">
-              <Image 
-                src={service.image || "/images/placeholder-slate.jpg"}
-                alt={service.title}
-                layout="fill"
-                objectFit="cover"
-                className="mix-blend-overlay opacity-60"
-              />
-            </div>
-            
-            {/* Add service summary card */}
-            <div className="absolute bottom-0 left-0 right-0 bg-black/50 backdrop-blur-sm p-2 sm:p-4 text-white hidden sm:block">
-              <h4 className="font-bold mb-0.5 sm:mb-1 text-xs sm:text-sm md:text-base">Why Choose Our {service.title}</h4>
-              <ul className="text-[10px] sm:text-xs md:text-sm space-y-0.5 sm:space-y-1">
-                <li className="flex items-center">
-                  <svg className="w-3 h-3 sm:w-4 sm:h-4 mr-1 text-[#898989]" fill="currentColor" viewBox="0 0 20 20">
-                    <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd"></path>
-                  </svg>
-                  Premium Quality Materials
-                </li>
-                <li className="flex items-center">
-                  <svg className="w-3 h-3 sm:w-4 sm:h-4 mr-1 text-[#898989]" fill="currentColor" viewBox="0 0 20 20">
-                    <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd"></path>
-                  </svg>
-                  Industry-Leading Precision
-                </li>
-                <li className="flex items-center">
-                  <svg className="w-3 h-3 sm:w-4 sm:h-4 mr-1 text-[#898989]" fill="currentColor" viewBox="0 0 20 20">
-                    <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd"></path>
-                  </svg>
-                  Long-Term Reliability
-                </li>
-              </ul>
-            </div>
-          </div>
-        
-          {/* Right side - Content */}
-          <div className="p-4 sm:p-6 lg:p-8 lg:w-3/5">
+
+        <div>
+          {/* Content */}
+          <div className="p-4 sm:p-6 lg:p-8">
             <div className="mb-4 sm:mb-6">
               <div className="flex items-center mb-2">
-                <span className="px-2 sm:px-3 py-0.5 sm:py-1 bg-[#000080]/20 dark:bg-[#000080]/40 text-[#000080] dark:text-[#898989] text-[10px] sm:text-xs font-semibold tracking-wider rounded-full mr-2 sm:mr-3">
+                <span className="px-2 sm:px-3 py-0.5 sm:py-1 bg-[#000080]/20 text-[#000080] text-[10px] sm:text-xs font-semibold tracking-wider rounded-full mr-2 sm:mr-3">
                   PREMIUM SERVICE
                 </span>
-                <div className="h-px bg-gray-200 dark:bg-gray-700 flex-grow"></div>
+                <div className="h-px bg-gray-200 flex-grow"></div>
               </div>
-              <h3 className="text-xl sm:text-2xl md:text-3xl font-bold text-gray-800 dark:text-white mb-1 sm:mb-2">{service.title}</h3>
+              <h3 className="text-xl sm:text-2xl md:text-3xl font-bold text-gray-800 mb-1 sm:mb-2">{service.title}</h3>
               <div className="w-12 sm:w-16 h-0.5 sm:h-1 bg-[#000080] mb-3 sm:mb-4"></div>
             </div>
-            
-            <div className="prose prose-slate dark:prose-invert mb-4 sm:mb-6">
-              <p className="text-gray-600 dark:text-gray-300 text-xs sm:text-sm md:text-base mb-3 sm:mb-4">{service.description}</p>
-            
-              <p className="text-gray-600 dark:text-gray-300 text-xs sm:text-sm md:text-base mb-4 sm:mb-6">
-                Our team of experts uses state-of-the-art equipment and follows industry best practices to deliver exceptional results. 
+
+            <div className="prose prose-slate mb-4 sm:mb-6">
+              <p className="text-gray-600 text-xs sm:text-sm md:text-base mb-3 sm:mb-4">{service.description}</p>
+
+              <p className="text-gray-600 text-xs sm:text-sm md:text-base mb-4 sm:mb-6">
+                Our team of experts uses state-of-the-art equipment and follows industry best practices to deliver exceptional results.
                 We pride ourselves on precision, reliability, and meeting tight deadlines for all our {service.title.toLowerCase()} projects.
               </p>
             </div>
-            
+
             {/* Features and Benefits */}
-            <div className="bg-[#000080]/10 dark:bg-[#000080]/20 p-3 sm:p-5 rounded-lg mb-4 sm:mb-6">
-              <h4 className="font-bold text-gray-800 dark:text-white mb-2 sm:mb-3 flex items-center text-xs sm:text-sm md:text-base">
-                <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 sm:h-5 sm:w-5 mr-1 sm:mr-2 text-[#000080] dark:text-slate-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <div className="bg-[#000080]/10 p-3 sm:p-5 rounded-lg mb-4 sm:mb-6">
+              <h4 className="font-bold text-gray-800 mb-2 sm:mb-3 flex items-center text-xs sm:text-sm md:text-base">
+                <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 sm:h-5 sm:w-5 mr-1 sm:mr-2 text-[#000080]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
                 </svg>
                 Service Benefits
               </h4>
               <div className="grid grid-cols-1 gap-2 sm:gap-3">
                 <div className="flex items-start">
-                  <svg className="w-4 h-4 sm:w-5 sm:h-5 mr-1.5 sm:mr-2 text-[#000080] dark:text-slate-400 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <svg className="w-4 h-4 sm:w-5 sm:h-5 mr-1.5 sm:mr-2 text-[#000080] flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7"></path>
                   </svg>
-                  <span className="dark:text-gray-300 text-[10px] sm:text-xs md:text-sm">Custom-tailored to your specific requirements</span>
+                  <span className="text-gray-700 text-[10px] sm:text-xs md:text-sm">Custom-tailored to your specific requirements</span>
                 </div>
                 <div className="flex items-start">
-                  <svg className="w-4 h-4 sm:w-5 sm:h-5 mr-1.5 sm:mr-2 text-[#000080] dark:text-slate-400 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <svg className="w-4 h-4 sm:w-5 sm:h-5 mr-1.5 sm:mr-2 text-[#000080] flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7"></path>
                   </svg>
-                  <span className="dark:text-gray-300 text-[10px] sm:text-xs md:text-sm">Highly durable components that last longer</span>
+                  <span className="text-gray-700 text-[10px] sm:text-xs md:text-sm">Highly durable components that last longer</span>
                 </div>
                 <div className="flex items-start">
-                  <svg className="w-4 h-4 sm:w-5 sm:h-5 mr-1.5 sm:mr-2 text-[#000080] dark:text-slate-400 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <svg className="w-4 h-4 sm:w-5 sm:h-5 mr-1.5 sm:mr-2 text-[#000080] flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7"></path>
                   </svg>
-                  <span className="dark:text-gray-300 text-[10px] sm:text-xs md:text-sm">Optimized for maximum performance</span>
+                  <span className="text-gray-700 text-[10px] sm:text-xs md:text-sm">Optimized for maximum performance</span>
                 </div>
                 <div className="flex items-start">
-                  <svg className="w-4 h-4 sm:w-5 sm:h-5 mr-1.5 sm:mr-2 text-[#000080] dark:text-slate-400 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <svg className="w-4 h-4 sm:w-5 sm:h-5 mr-1.5 sm:mr-2 text-[#000080] flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7"></path>
                   </svg>
-                  <span className="dark:text-gray-300 text-[10px] sm:text-xs md:text-sm">Cost-effective solutions with superior quality</span>
+                  <span className="text-gray-700 text-[10px] sm:text-xs md:text-sm">Cost-effective solutions with superior quality</span>
                 </div>
               </div>
             </div>
-            
+
             {/* Contact CTA */}
-            <div className="border-t border-gray-100 dark:border-gray-800 pt-4 sm:pt-6">
+            <div className="border-t border-gray-200 pt-4 sm:pt-6">
               <div className="flex flex-wrap items-center gap-2 sm:gap-3">
                 <button
                   onClick={() => {
@@ -255,23 +212,23 @@ const ServiceModal = ({ service, isOpen, onClose }) => {
                       }
                     }, 100);
                   }}
-                  className="px-4 sm:px-6 py-2 sm:py-3 bg-[#000080] hover:bg-[#000080] text-white text-xs sm:text-sm font-medium rounded-lg transition-colors inline-flex items-center whitespace-nowrap"
+                  className="px-4 sm:px-6 py-2 sm:py-3 bg-[#000080] hover:bg-[#000060] text-white text-xs sm:text-sm font-medium rounded-lg transition-colors inline-flex items-center whitespace-nowrap"
                 >
                   Get a Quote
                   <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 sm:h-5 sm:w-5 ml-1 sm:ml-2" viewBox="0 0 20 20" fill="currentColor">
                     <path fillRule="evenodd" d="M10.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L12.586 11H5a1 1 0 110-2h7.586l-2.293-2.293a1 1 0 010-1.414z" clipRule="evenodd" />
                   </svg>
                 </button>
-                
-                {/* Contact icons */}
-                <a href="tel:+919022726250" className="flex items-center gap-1 sm:gap-2 px-3 sm:px-4 py-2 sm:py-3 rounded-lg border border-[#000080]/30 dark:border-[#000080] hover:bg-[#000080]/10 dark:hover:bg-[#000080]/30 transition-colors text-[#000080] dark:text-[#898989] text-xs sm:text-sm">
-                  <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 sm:h-5 sm:w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
+
+                {/* Contact buttons - more visible */}
+                <a href="tel:+919022726250" className="flex items-center gap-1.5 sm:gap-2 px-3 sm:px-4 py-2 sm:py-3 rounded-lg bg-green-500 hover:bg-green-600 transition-colors text-white text-xs sm:text-sm font-medium">
+                  <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 sm:h-5 sm:w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
                     <path strokeLinecap="round" strokeLinejoin="round" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 8V5z" />
                   </svg>
                   <span>Call Us</span>
                 </a>
-                <a href="mailto:thealhamdtechnologies@gmail.com" className="flex items-center gap-1 sm:gap-2 px-3 sm:px-4 py-2 sm:py-3 rounded-lg border border-[#000080]/30 dark:border-[#000080] hover:bg-[#000080]/10 dark:hover:bg-[#000080]/30 transition-colors text-[#000080] dark:text-[#898989] text-xs sm:text-sm">
-                  <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 sm:h-5 sm:w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
+                <a href="mailto:thealhamdtechnologies@gmail.com" className="flex items-center gap-1.5 sm:gap-2 px-3 sm:px-4 py-2 sm:py-3 rounded-lg bg-blue-500 hover:bg-blue-600 transition-colors text-white text-xs sm:text-sm font-medium">
+                  <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 sm:h-5 sm:w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
                     <path strokeLinecap="round" strokeLinejoin="round" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
                   </svg>
                   <span>Email Us</span>

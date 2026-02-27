@@ -59,7 +59,7 @@ const Hero = () => {
       <div className={`w-full max-w-[1920px] mx-auto px-4 sm:px-6 lg:px-8 relative z-10 ${isCustomWidthRange ? '!px-8' : ''}`}>
         <div className="flex flex-col items-center text-center max-w-4xl mx-auto">
 
-          <div className="mb-2 sm:mb-3">
+          <div className="mb-2 sm:mb-3 md:pt-16 lg:pt-20">
             <span className="inline-block px-3 py-1 bg-gradient-to-r from-[#000080]/20 via-[#000080]/30 to-[#000080]/20 text-white text-[10px] sm:text-xs font-semibold tracking-wider rounded-full mb-3 sm:mb-4 backdrop-blur-sm border border-[#000080]/20">
               INNOVATIVE TECHNOLOGY SOLUTIONS
             </span>

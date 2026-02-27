@@ -12,7 +12,7 @@ export default function Testimonials() {
           backgroundSize: '30px 30px'
         }}
       ></div>
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+      <div className="container mx-auto px-4 md:px-8 relative z-10">
         <div className="flex flex-col md:flex-row md:justify-between md:items-center gap-4 md:gap-6 mb-8 md:mb-10">
           <div className="flex-1">
             <div className="inline-block px-3 py-1 bg-white/10 text-white rounded-full text-xs sm:text-sm font-medium tracking-wide mb-3">

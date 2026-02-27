@@ -367,9 +367,9 @@ export default function Header() {
         {/* Enhanced Desktop Navigation */}
         <nav className="hidden md:flex space-x-6">
           {['home', 'services', 'about', 'testimonials', 'videos', 'contact'].map((item) => (
-            <Link 
+            <Link
               key={item}
-              href={`#${item}`} 
+              href={`#${item}`}
               className={`text-gray-700 hover:text-[#000080] font-medium transition-all duration-300 relative group px-3 py-1.5 ${
                 activeSection === item ? 'text-[#000080]' : ''
               }`}
@@ -377,12 +377,7 @@ export default function Header() {
               <span className="relative z-10">
                 {item === 'contact' ? 'Contact Us' : item.charAt(0).toUpperCase() + item.slice(1)}
               </span>
-              
-              {/* Enhanced active indicator with animation */}
-              <span className={`absolute -bottom-1 left-0 h-0.5 bg-[#000080] transition-all duration-300 ease-out ${
-                activeSection === item ? 'w-full' : 'w-0 group-hover:w-full'
-              }`}></span>
-              
+
               {/* Hover background effect */}
               <span className="absolute inset-0 bg-[#000080]/10 rounded-xl opacity-0 group-hover:opacity-100 transition-opacity duration-300 -z-10"></span>
             </Link>
