@@ -61,7 +61,7 @@ const Hero = () => {
   }, []);
 
   return (
-    <section id="home" className="relative w-full min-h-screen flex items-center justify-center overflow-hidden text-white pt-16 pb-8 sm:py-0">
+    <section id="home" className="relative w-full h-screen flex items-center justify-center overflow-hidden text-white">
       {/* Background image */}
       <img
         src="/hero-bg.jpg"
@@ -116,7 +116,7 @@ const Hero = () => {
         />
       </div>
       
-      <div className={`w-full max-w-[1920px] mx-auto px-4 sm:px-6 lg:px-8 py-4 sm:py-8 md:py-12 relative z-10 ${isCustomWidthRange ? '!px-8' : ''}`}>
+      <div className={`w-full max-w-[1920px] mx-auto px-4 sm:px-6 lg:px-8 relative z-10 ${isCustomWidthRange ? '!px-8' : ''}`}>
         <div className="flex flex-col items-center text-center max-w-4xl mx-auto">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
