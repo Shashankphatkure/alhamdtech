@@ -164,11 +164,11 @@ function TestimonialSlider() {
               style={{ width: `${slideWidth}%` }}
             >
               <div className="bg-white/10 backdrop-blur-sm p-4 sm:p-5 lg:p-6 rounded-lg h-full flex flex-col hover:bg-white/15 transition-all duration-300 border border-white/10">
-                <blockquote className="text-sm sm:text-base lg:text-lg mb-4 flex-grow leading-relaxed">
+                <blockquote className="text-sm sm:text-base lg:text-lg mb-2 leading-relaxed line-clamp-4 min-h-[5rem] sm:min-h-[6rem]">
                   "{testimonial.quote}"
                 </blockquote>
 
-                <div className="mt-auto pt-4 border-t border-white/10">
+                <div className="mt-auto pt-2 border-t border-white/10">
                   <h4 className="font-semibold text-white text-base sm:text-lg">{testimonial.name}</h4>
                   <p className="text-white/70 text-xs sm:text-sm">{testimonial.role}</p>
 
