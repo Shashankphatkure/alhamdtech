@@ -3,7 +3,7 @@ import { isBrowser } from '../utils/clientUtils';
 
 export default function Testimonials() {
   return (
-    <section id="testimonials" className="flex items-center bg-gradient-to-br from-[#000080] to-[#000080] text-white h-screen">
+    <section id="testimonials" className="flex items-center bg-gradient-to-br from-[#000080] to-[#000080] text-white h-[670px]">
       <div className="container mx-auto px-4 md:px-8 py-4 md:py-6 w-full">
         <div className="flex flex-col md:flex-row md:justify-between md:items-center mb-4">
           <div className="md:max-w-2xl">
@@ -13,7 +13,7 @@ export default function Testimonials() {
             <h2 className="text-2xl md:text-3xl font-bold text-white mb-4">
               What Our <span className="text-white">Clients Say</span>
             </h2>
-            <p className="text-[#000080]/20 text-base max-w-3xl">
+            <p className="text-white/70 text-base max-w-3xl">
               Don't just take our word for it. Here's what some of our valued clients have to say about our precision machining services.
             </p>
           </div>
@@ -39,7 +39,6 @@ function TestimonialSlider() {
       id: 1,
       name: "Rajesh Kumar",
       role: "Industrial Machinery Manufacturer",
-      image: "https://randomuser.me/api/portraits/men/32.jpg",
       quote: "Bahut badhiya kaam karte hain Alhamd Technologies. Unka precision machining ka kaam bilkul perfect hai. Humari production line ke liye bahut important hai.",
       rating: 5
     },
@@ -47,7 +46,6 @@ function TestimonialSlider() {
       id: 2,
       name: "Priya Sharma",
       role: "Automotive Components Supplier",
-      image: "https://randomuser.me/api/portraits/women/44.jpg",
       quote: "Alhamd Technologies ka quality control bahut strong hai. Unke CNC machining services ne humari productivity ko double kar diya hai. Time pe delivery bhi milti hai.",
       rating: 5
     },
@@ -55,7 +53,6 @@ function TestimonialSlider() {
       id: 3,
       name: "Arun Patel",
       role: "Heavy Equipment Manufacturer",
-      image: "https://randomuser.me/api/portraits/men/67.jpg",
       quote: "Hum 5 saal se Alhamd Technologies ke saath kaam kar rahe hain. Unka technical expertise aur attention to detail bahut impressive hai. Koi bhi complex component banane mein expert hain.",
       rating: 5
     },
@@ -63,7 +60,6 @@ function TestimonialSlider() {
       id: 4,
       name: "Meera Gupta",
       role: "Industrial Tools Manufacturer",
-      image: "https://randomuser.me/api/portraits/women/28.jpg",
       quote: "Alhamd Technologies ne humari manufacturing process ko completely transform kar diya hai. Unka precision engineering ka kaam bahut reliable hai. Cost-effective bhi hai.",
       rating: 5
     },
@@ -71,7 +67,6 @@ function TestimonialSlider() {
       id: 5,
       name: "Vikram Singh",
       role: "Construction Equipment Supplier",
-      image: "https://randomuser.me/api/portraits/men/75.jpg",
       quote: "Alhamd Technologies ka kaam dekh kar hum bahut impressed hain. Unke CNC machines ka precision level bahut high hai. Humari quality standards ko exceed karte hain.",
       rating: 5
     }
@@ -161,16 +156,9 @@ function TestimonialSlider() {
                     </div>
                     
                     <div className="mt-auto">
-                      <div className="flex items-center">
-                        <img 
-                          src={testimonial.image} 
-                          alt={testimonial.name} 
-                          className="w-12 h-12 rounded-full border-2 border-white/50 mr-3 object-cover shadow-lg"
-                        />
-                        <div>
-                          <h4 className="font-bold text-white text-lg">{testimonial.name}</h4>
-                          <p className="text-white text-sm">{testimonial.role}</p>
-                        </div>
+                      <div>
+                        <h4 className="font-bold text-white text-lg">{testimonial.name}</h4>
+                        <p className="text-white text-sm">{testimonial.role}</p>
                       </div>
                       
                       <div className="flex mt-3">
