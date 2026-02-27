@@ -3,8 +3,16 @@ import { isBrowser } from '../utils/clientUtils';
 
 export default function Testimonials() {
   return (
-    <section id="testimonials" className="flex items-center bg-gradient-to-br from-[#000080] to-[#000080] text-white overflow-hidden w-full max-w-full">
-      <div className="container mx-auto px-4 md:px-8 pb-4 md:pb-6 w-full max-w-full overflow-hidden">
+    <section id="testimonials" className="flex items-center bg-gradient-to-br from-[#000080] to-[#000080] text-white overflow-hidden w-full max-w-full min-h-[600px] md:min-h-[700px] py-12 md:py-16 relative">
+      {/* Grid background effect */}
+      <div
+        className="absolute inset-0 pointer-events-none"
+        style={{
+          backgroundImage: 'linear-gradient(to right, rgba(255,255,255,0.15) 1px, transparent 1px), linear-gradient(to bottom, rgba(255,255,255,0.15) 1px, transparent 1px)',
+          backgroundSize: '40px 40px'
+        }}
+      ></div>
+      <div className="container mx-auto px-4 md:px-8 pb-4 md:pb-6 w-full max-w-full overflow-hidden relative z-10">
         <div className="flex flex-col md:flex-row md:justify-between md:items-center mb-4 pb-4">
           <div className="md:max-w-2xl">
             <div className="inline-block px-3 py-1 bg-[#000080]/20 text-[#000080] rounded-full text-sm font-medium tracking-wide mb-3">
