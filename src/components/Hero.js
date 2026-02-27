@@ -64,7 +64,7 @@ const Hero = () => {
     <section id="home" className="relative w-full min-h-screen flex items-center justify-center overflow-hidden text-white pt-16 pb-8 sm:py-0">
       {/* Background image */}
       <img
-        src="https://img.freepik.com/premium-vector/dark-blue-background-with-blue-gradient_1055519-2175.jpg?semt=ais_hybrid&w=740&q=80"
+        src="/hero-bg.jpg"
         alt="Background"
         className="absolute inset-0 w-full h-full object-cover z-0"
       />
