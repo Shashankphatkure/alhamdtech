@@ -43,7 +43,7 @@ export default function ServicesPage() {
       <section className="section border-y border-steel-200 bg-white">
         <div className="wrap">
           <SectionHeading center eyebrow="How it works" title="One process for every job, large or small." />
-          <ol className="reveal-group mt-14 grid gap-5 sm:grid-cols-2 lg:grid-cols-5">
+          <ol className="reveal-group mt-12 grid gap-5 sm:grid-cols-2 lg:grid-cols-5">
             {process.map((step, i) => (
               <li key={step.title} className="card card-hover reveal relative p-6">
                 <span className="absolute right-5 top-4 font-display text-4xl font-semibold text-navy-100">
@@ -60,7 +60,7 @@ export default function ServicesPage() {
         </div>
       </section>
 
-      <div className="pt-20 lg:pt-28">
+      <div className="section-top">
         <CtaBand />
       </div>
 

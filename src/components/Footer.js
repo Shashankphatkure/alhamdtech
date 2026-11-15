@@ -41,7 +41,7 @@ export default function Footer() {
   return (
     <footer className="on-dark relative overflow-hidden bg-navy-950 text-white">
       <div className="bg-grid absolute inset-0 opacity-60" aria-hidden="true" />
-      <Rings spin={false} className="absolute -bottom-56 -left-40 w-[36rem] opacity-50" />
+      <Rings spin={false} className="absolute -right-48 -top-56 w-[36rem] opacity-40" />
       <div className="wrap relative pb-10 pt-16">
         <div className="grid gap-12 lg:grid-cols-[1.3fr_3fr]">
           <div>

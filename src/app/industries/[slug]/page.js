@@ -96,7 +96,7 @@ export default async function IndustryPage({ params }) {
       <section className="section">
         <div className="wrap">
           <SectionHeading eyebrow="Processes used" title="Services behind these components" />
-          <div className="mt-10 reveal-group grid gap-5 sm:grid-cols-2 xl:grid-cols-4">
+          <div className="mt-12 reveal-group grid gap-5 sm:grid-cols-2 xl:grid-cols-4">
             {used.map((s) => (
               <ServiceCard key={s.slug} item={s} />
             ))}

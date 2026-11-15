@@ -47,7 +47,7 @@ export default function LocationsPage() {
         </div>
       </section>
 
-      <section className="wrap pb-20">
+      <section className="wrap section-bottom">
         <div className="card overflow-hidden">
           <iframe
             src={site.mapEmbed}

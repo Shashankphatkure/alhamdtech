@@ -168,7 +168,7 @@ export default async function ServicePage({ params }) {
       <section className="section">
         <div className="wrap">
           <SectionHeading eyebrow="Related services" title="Often combined with" />
-          <div className="mt-10 reveal-group grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
+          <div className="mt-12 reveal-group grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
             {related.map((s) => (
               <ServiceCard key={s.slug} item={s} />
             ))}

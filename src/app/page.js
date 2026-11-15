@@ -82,7 +82,7 @@ export default function Home() {
             </ul>
           </div>
 
-          <dl className="hero-in mt-14 grid grid-cols-2 gap-px overflow-hidden rounded-2xl border border-white/10 bg-white/10 backdrop-blur-md lg:mt-20 lg:grid-cols-4">
+          <dl className="hero-in mt-12 grid grid-cols-2 gap-px overflow-hidden rounded-2xl border border-white/10 bg-white/10 backdrop-blur-md lg:mt-20 lg:grid-cols-4">
             {stats.map((s) => (
               <div key={s.label} className="bg-navy-950/60 px-5 py-5 sm:px-7 sm:py-6">
                 <dd className="font-display text-3xl font-semibold tracking-tight text-white sm:text-4xl">{s.value}</dd>
@@ -165,7 +165,7 @@ export default function Home() {
               title="A workshop that treats your breakdown like its own."
               lead="Started in 2008 by Mr. N. Hassan Khan, a machinist with over 25 years of experience in Indian and Gulf workshops. Send us your drawing. We will make the part."
             />
-            <div className="reveal-group mt-10 grid gap-4 sm:grid-cols-2">
+            <div className="reveal-group mt-12 grid gap-4 sm:grid-cols-2">
               {strengths.map((s) => (
                 <div key={s.title} className="reveal flex gap-4 rounded-2xl border border-steel-200 bg-steel-50 p-5 transition-colors hover:border-navy-300 hover:bg-white">
                   <span className="icon-tile">
@@ -202,7 +202,7 @@ export default function Home() {
             </Link>
           </div>
         </div>
-        <ScrollRow className="mt-10">
+        <ScrollRow className="mt-9">
           {industries.map((i) => (
             <div key={i.slug} className="w-[min(19rem,78vw)]">
               <IndustryTile item={i} />
@@ -233,7 +233,7 @@ export default function Home() {
             eyebrow="How it works"
             title="From enquiry to finished part in five steps."
           />
-          <ol className="reveal-group mt-14 grid gap-5 sm:grid-cols-2 lg:grid-cols-5">
+          <ol className="reveal-group mt-12 grid gap-5 sm:grid-cols-2 lg:grid-cols-5">
             {process.map((step, i) => (
               <li key={step.title} className="card card-hover reveal relative p-6">
                 <span className="absolute right-5 top-4 font-display text-4xl font-semibold text-navy-100">
@@ -265,7 +265,7 @@ export default function Home() {
             </Link>
           </div>
         </div>
-        <ScrollRow reverse className="mt-8">
+        <ScrollRow reverse className="mt-9">
           {gallery.slice(0, 8).map((img) => (
             <Link key={img.src} href="/gallery" className="group relative block h-72 w-56 overflow-hidden rounded-2xl bg-navy-900 sm:h-80 sm:w-64">
               <Image
@@ -279,7 +279,7 @@ export default function Home() {
           ))}
         </ScrollRow>
         <div className="wrap">
-          <div className="mt-10">
+          <div className="mt-12">
             <VideoGrid videos={videos} />
           </div>
           <a
@@ -300,7 +300,7 @@ export default function Home() {
         <div className="wrap">
           <SectionHeading eyebrow="Customer feedback" title="What our customers say." />
         </div>
-        <ScrollRow className="mt-8">
+        <ScrollRow className="mt-9">
           {testimonials.map((t) => (
             <figure key={t.name} className="card flex w-[min(24rem,82vw)] flex-col p-6">
               <Icon name="quote" size={28} className="text-spark-500" />
@@ -398,7 +398,7 @@ export default function Home() {
         </div>
       </section>
 
-      <div className="bg-white pt-4">
+      <div className="bg-white">
         <CtaBand />
       </div>
     </>

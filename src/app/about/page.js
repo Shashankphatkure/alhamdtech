@@ -151,7 +151,7 @@ export default function AboutPage() {
         </div>
       </section>
 
-      <div className="pt-20 lg:pt-28">
+      <div className="section-top">
         <CtaBand />
       </div>
 

@@ -10,7 +10,7 @@ export const metadata = pageMeta({
 
 export default function PrivacyPage() {
   return (
-    <div className="wrap max-w-3xl py-12 lg:py-16">
+    <div className="wrap section max-w-3xl">
       <Breadcrumbs dark={false} items={[{ name: 'Privacy policy', href: '/privacy-policy' }]} />
       <h1 className="h-lg mt-8">Privacy policy</h1>
       <div className="prose-body mt-8">

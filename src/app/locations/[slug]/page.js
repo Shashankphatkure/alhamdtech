@@ -103,12 +103,12 @@ export default async function LocationPage({ params }) {
       <section className="section border-y border-steel-200 bg-white">
         <div className="wrap">
           <SectionHeading eyebrow="Services" title={`Job work available for ${loc.name}`} />
-          <div className="mt-10 reveal-group grid gap-5 sm:grid-cols-2 xl:grid-cols-4">
+          <div className="mt-12 reveal-group grid gap-5 sm:grid-cols-2 xl:grid-cols-4">
             {services.map((s) => (
               <ServiceCard key={s.slug} item={s} />
             ))}
           </div>
-          <h3 className="h-md mt-14">Industry specialisations</h3>
+          <h3 className="h-md mt-12">Industry specialisations</h3>
           <ul className="mt-6 flex flex-wrap gap-3">
             {industries.map((i) => (
               <li key={i.slug}>

@@ -116,7 +116,7 @@ export default async function PostPage({ params }) {
       <section className="section border-t border-steel-200 bg-white">
         <div className="wrap">
           <h2 className="h-lg">More guides</h2>
-          <div className="mt-10 reveal-group grid gap-5 md:grid-cols-3">
+          <div className="mt-12 reveal-group grid gap-5 md:grid-cols-3">
             {more.map((p) => (
               <PostCard key={p.slug} post={p} />
             ))}

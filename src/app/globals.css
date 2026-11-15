@@ -83,9 +83,14 @@ p {
     .wrap { padding-inline: 2rem; }
   }
 
+  /* Vertical rhythm: every section uses the same top and bottom padding. */
   .section { padding-block: 4.5rem; }
+  .section-top { padding-top: 4.5rem; }
+  .section-bottom { padding-bottom: 4.5rem; }
   @media (min-width: 1024px) {
     .section { padding-block: 6.5rem; }
+    .section-top { padding-top: 6.5rem; }
+    .section-bottom { padding-bottom: 6.5rem; }
   }
 
   .eyebrow {
