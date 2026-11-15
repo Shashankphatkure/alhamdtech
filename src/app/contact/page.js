@@ -74,7 +74,7 @@ export default function ContactPage() {
                 <p className="mt-4 text-xs font-medium text-steel-600">We are available to serve you every day.</p>
               </div>
 
-              <div className="on-dark rounded-[1.1rem] bg-brand p-6 text-white">
+              <div className="on-dark rounded-none bg-brand p-6 text-white">
                 <h2 className="h-md">Workshop address</h2>
                 <address className="mt-3 text-sm not-italic leading-relaxed text-white/80">{fullAddress}</address>
                 <a href={site.mapLink} target="_blank" rel="noopener noreferrer" className="btn btn-primary mt-5">

@@ -5,7 +5,7 @@ import Icon from './Icon';
 import { site } from '@/lib/site';
 
 const field =
-  'w-full rounded-xl border border-steel-200 bg-white px-4 py-3 text-[0.95rem] text-steel-900 placeholder:text-steel-400 transition-colors focus:border-navy-700 focus:outline-none focus:ring-4 focus:ring-navy-100';
+  'w-full rounded-[2px] border border-steel-200 bg-white px-4 py-3 text-[0.95rem] text-steel-900 placeholder:text-steel-400 transition-colors focus:border-navy-700 focus:outline-none focus:ring-4 focus:ring-navy-100';
 
 export default function ContactForm({ serviceOptions = [], defaultService = '' }) {
   const [form, setForm] = useState({ name: '', phone: '', company: '', service: defaultService, quantity: '', message: '' });

@@ -54,7 +54,7 @@ export default function Home() {
 
         <div className="wrap pb-10 pt-16 lg:pt-28">
           <div className="hero-in max-w-3xl">
-            <p className="mb-6 flex w-fit items-center gap-2.5 rounded-full border border-white/15 bg-white/5 py-1.5 pl-2 pr-4 text-xs font-medium text-white/85 backdrop-blur">
+            <p className="mb-6 flex w-fit items-center gap-2.5 rounded-none border border-white/15 bg-white/5 py-1.5 pl-2 pr-4 text-xs font-medium text-white/85 backdrop-blur">
               <span className="relative flex h-2.5 w-2.5">
                 <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-emerald-400 opacity-75" />
                 <span className="relative inline-flex h-2.5 w-2.5 rounded-full bg-emerald-400" />
@@ -318,7 +318,7 @@ export default function Home() {
               </figcaption>
             </figure>
           ))}
-          <div className="on-dark bg-brand flex w-[min(24rem,82vw)] flex-col justify-between rounded-[1.1rem] p-6 text-white">
+          <div className="on-dark bg-brand flex w-[min(24rem,82vw)] flex-col justify-between rounded-none p-6 text-white">
             <div>
               <Icon name="message-circle" size={28} className="text-spark-400" />
               <h3 className="mt-4 text-xl font-semibold">Have a job in mind?</h3>
