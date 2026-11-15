@@ -143,7 +143,7 @@ export default async function ServicePage({ params }) {
             </div>
 
             <div className="mt-5 rounded-[1.1rem] border border-steel-200 bg-navy-50 p-6">
-              <h2 className="font-display text-sm font-bold uppercase tracking-[0.14em] text-navy-900">Available across</h2>
+              <h2 className="font-display text-sm font-semibold uppercase tracking-[0.14em] text-navy-900">Available across</h2>
               <ul className="mt-4 flex flex-wrap gap-2">
                 {locations.map((l) => (
                   <li key={l.slug}>

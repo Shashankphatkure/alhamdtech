@@ -2,25 +2,25 @@
 
 @theme {
   --font-sans: var(--font-inter), ui-sans-serif, system-ui, sans-serif;
-  --font-display: var(--font-archivo), var(--font-inter), ui-sans-serif, system-ui, sans-serif;
+  --font-display: var(--font-serif), Georgia, "Times New Roman", serif;
 
-  --color-navy-950: #050816;
-  --color-navy-900: #0a1024;
-  --color-navy-800: #111c44;
-  --color-navy-700: #1a3be0;
-  --color-navy-600: #3457ff;
-  --color-navy-500: #5f7cff;
-  --color-navy-300: #a8b8ff;
-  --color-navy-100: #e1e7ff;
-  --color-navy-50: #f2f5ff;
+  --color-navy-950: #0a1422;
+  --color-navy-900: #0f1b2d;
+  --color-navy-800: #18283f;
+  --color-navy-700: #1c3a66;
+  --color-navy-600: #2b528c;
+  --color-navy-500: #5a7bae;
+  --color-navy-300: #a9b8cf;
+  --color-navy-100: #dde4ee;
+  --color-navy-50: #f0f3f8;
 
-  --color-spark-400: #ff9d5c;
-  --color-spark-500: #ff6a1f;
-  --color-spark-600: #e6560c;
+  --color-spark-400: #ff8a3d;
+  --color-spark-500: #ee6510;
+  --color-spark-600: #cf5206;
 
-  --color-steel-50: #f5f7fb;
-  --color-steel-100: #eceef2;
-  --color-steel-200: #d9dde5;
+  --color-steel-50: #f4f6f9;
+  --color-steel-100: #e9edf2;
+  --color-steel-200: #d4dae4;
   --color-steel-400: #8a93a6;
   --color-steel-600: #4b5468;
   --color-steel-800: #1f2533;
@@ -50,7 +50,8 @@ body {
 
 h1, h2, h3, h4 {
   font-family: var(--font-display);
-  letter-spacing: -0.02em;
+  letter-spacing: -0.01em;
+  font-weight: 600;
   color: var(--color-navy-900);
   text-wrap: balance;
 }
@@ -91,36 +92,37 @@ p {
     display: inline-flex;
     align-items: center;
     gap: 0.6rem;
-    font-size: 0.75rem;
-    font-weight: 600;
-    letter-spacing: 0.16em;
+    font-size: 0.78rem;
+    font-weight: 700;
+    letter-spacing: 0.2em;
     text-transform: uppercase;
     color: var(--color-spark-600);
   }
-  .eyebrow::before {
-    content: "";
-    width: 1.75rem;
-    height: 2px;
-    background: currentColor;
+  .rule {
+    display: block;
+    width: 2.75rem;
+    height: 3px;
+    border-radius: 2px;
+    background: var(--color-spark-500);
   }
   .on-dark .eyebrow { color: var(--color-spark-400); }
 
   .h-xl {
     font-size: clamp(2.25rem, 5.4vw, 4.25rem);
     line-height: 1.02;
-    font-weight: 800;
-    letter-spacing: -0.035em;
+    font-weight: 600;
+    letter-spacing: -0.02em;
   }
   .h-lg {
     font-size: clamp(1.85rem, 3.4vw, 2.85rem);
     line-height: 1.08;
-    font-weight: 750;
-    letter-spacing: -0.03em;
+    font-weight: 600;
+    letter-spacing: -0.015em;
   }
   .h-md {
     font-size: clamp(1.3rem, 2vw, 1.6rem);
     line-height: 1.2;
-    font-weight: 700;
+    font-weight: 600;
   }
   .lead {
     font-size: 1.0625rem;
@@ -163,15 +165,15 @@ p {
   .btn-primary {
     background: linear-gradient(135deg, var(--color-spark-400), var(--color-spark-500) 45%, var(--color-spark-600));
     color: #fff;
-    box-shadow: 0 10px 24px -10px rgb(255 106 31 / 0.65);
+    box-shadow: 0 10px 24px -10px rgb(238 101 16 / 0.65);
   }
-  .btn-primary:hover { box-shadow: 0 16px 32px -10px rgb(255 106 31 / 0.8); }
+  .btn-primary:hover { box-shadow: 0 16px 32px -10px rgb(238 101 16 / 0.8); }
   .btn-navy {
     background: linear-gradient(135deg, var(--color-navy-600), var(--color-navy-700));
     color: #fff;
-    box-shadow: 0 10px 24px -12px rgb(26 59 224 / 0.6);
+    box-shadow: 0 10px 24px -12px rgb(15 27 45 / 0.6);
   }
-  .btn-navy:hover { box-shadow: 0 16px 32px -12px rgb(26 59 224 / 0.8); }
+  .btn-navy:hover { box-shadow: 0 16px 32px -12px rgb(15 27 45 / 0.8); }
   .btn-outline {
     border: 1.5px solid var(--color-steel-200);
     color: var(--color-navy-900);
@@ -277,8 +279,8 @@ details[open] .faq-plus { transform: rotate(45deg); }
 }
 .bg-brand {
   background:
-    radial-gradient(120% 140% at 100% 0%, rgb(95 124 255 / 0.55), transparent 55%),
-    linear-gradient(135deg, var(--color-navy-700), #1227a8);
+    radial-gradient(120% 140% at 100% 0%, rgb(43 82 140 / 0.7), transparent 55%),
+    linear-gradient(135deg, var(--color-navy-800), var(--color-navy-950));
 }
 .glow {
   position: absolute;
@@ -289,11 +291,6 @@ details[open] .faq-plus { transform: rotate(45deg); }
 
 @keyframes fade-up {
   from { opacity: 0; transform: translateY(26px); }
-  to { opacity: 1; transform: none; }
-}
-@keyframes reveal-up {
-  from { opacity: 0; transform: translateY(40px) scale(0.98); }
-  to { opacity: 1; transform: none; }
 }
 @keyframes ken-burns {
   from { transform: scale(1); }
@@ -314,6 +311,14 @@ details[open] .faq-plus { transform: rotate(45deg); }
   from { transform: translateX(100%); }
   to { transform: none; }
 }
+@keyframes slide-x {
+  from { transform: translateX(0); }
+  to { transform: translateX(min(0px, calc(100cqw - 100%))); }
+}
+@keyframes slide-x-reverse {
+  from { transform: translateX(min(0px, calc(100cqw - 100%))); }
+  to { transform: translateX(0); }
+}
 @keyframes spin-slow {
   to { transform: rotate(360deg); }
 }
@@ -332,19 +337,27 @@ details[open] .faq-plus { transform: rotate(45deg); }
   .marquee-track { animation: marquee 38s linear infinite; }
   .marquee:hover .marquee-track { animation-play-state: paused; }
   .pulse-ring { animation: pulse-ring 2.2s ease-out infinite; }
-  .spin-slow { animation: spin-slow 18s linear infinite; }
+  .spin-slow { animation: spin-slow 60s linear infinite; }
+  .spin-slow-reverse { animation: spin-slow 80s linear infinite reverse; }
 
-  /* Scroll-driven reveal: pure CSS, no JS. Browsers without support simply show the content. */
+  /* Scroll-linked carousels: the track slides sideways while its row crosses the viewport. */
   @supports (animation-timeline: view()) {
-    .reveal {
-      animation: reveal-up linear both;
+    .scroll-row { overflow: hidden; }
+    .scroll-track {
+      animation: slide-x linear both;
       animation-timeline: view();
-      animation-range: entry 0% entry 55%;
+      animation-range: cover 12% cover 88%;
     }
-    .reveal-group > *:nth-child(4n + 2) { animation-range: entry 8% entry 63%; }
-    .reveal-group > *:nth-child(4n + 3) { animation-range: entry 16% entry 71%; }
-    .reveal-group > *:nth-child(4n + 4) { animation-range: entry 24% entry 79%; }
+    .scroll-track-reverse { animation-name: slide-x-reverse; }
   }
+
+  /* One-shot reveal. `js-reveal` is added by an inline script, `is-visible` by RevealObserver.
+     Without JavaScript neither class exists and everything is simply visible. */
+  html.js-reveal .reveal:not(.is-visible) { opacity: 0; }
+  html.js-reveal .reveal.is-visible { animation: fade-up 0.75s cubic-bezier(0.2, 0.7, 0.2, 1) backwards; }
+  html.js-reveal .reveal-group > .is-visible:nth-child(4n + 2) { animation-delay: 0.09s; }
+  html.js-reveal .reveal-group > .is-visible:nth-child(4n + 3) { animation-delay: 0.18s; }
+  html.js-reveal .reveal-group > .is-visible:nth-child(4n + 4) { animation-delay: 0.27s; }
 }
 
 .marquee {
@@ -352,3 +365,25 @@ details[open] .faq-plus { transform: rotate(45deg); }
   mask-image: linear-gradient(90deg, transparent, #000 8%, #000 92%, transparent);
 }
 .marquee-track { display: flex; width: max-content; }
+
+.scroll-row {
+  container-type: inline-size;
+  overflow-x: auto;
+  scroll-snap-type: x proximity;
+  scrollbar-width: none;
+}
+.scroll-row::-webkit-scrollbar { display: none; }
+.scroll-track {
+  display: flex;
+  gap: 1.1rem;
+  width: max-content;
+  padding-block: 0.75rem 1.5rem;
+  padding-inline: max(1.25rem, calc((100vw - 78rem) / 2 + 2rem));
+  will-change: transform;
+}
+.scroll-track > * { flex: none; scroll-snap-align: center; }
+html.js-reveal .scroll-track .reveal { opacity: 1 !important; animation: none !important; }
+
+/* Dotted hairline, as used between rows in the brochure */
+.dotted-top { border-top: 1.5px dotted rgb(15 27 45 / 0.25); }
+.on-dark .dotted-top, .on-dark.dotted-top { border-top-color: rgb(255 255 255 / 0.25); }

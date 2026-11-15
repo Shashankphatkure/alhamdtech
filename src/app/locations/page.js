@@ -35,7 +35,7 @@ export default function LocationsPage() {
                 <Icon name="map-pin" size={21} />
               </span>
               <span>
-                <span className="block font-display text-xl font-bold text-navy-900">{l.name}</span>
+                <span className="block font-display text-xl font-semibold text-navy-900">{l.name}</span>
                 <span className="mt-2 block text-sm leading-relaxed text-steel-600">{l.intro}</span>
                 <span className="mt-4 inline-flex items-center gap-1.5 text-sm font-semibold text-navy-700 group-hover:text-spark-600">
                   {l.title}

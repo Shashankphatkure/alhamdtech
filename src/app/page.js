@@ -6,6 +6,8 @@ import QuoteButtons from '@/components/QuoteButtons';
 import CtaBand from '@/components/CtaBand';
 import Faq from '@/components/Faq';
 import VideoGrid from '@/components/VideoGrid';
+import Rings from '@/components/Rings';
+import ScrollRow from '@/components/ScrollRow';
 import { ServiceCard, IndustryTile, PostCard } from '@/components/Cards';
 import { site } from '@/lib/site';
 import { pageMeta } from '@/lib/seo';
@@ -48,8 +50,7 @@ export default function Home() {
         <div className="absolute inset-0 -z-10 bg-gradient-to-r from-navy-950 via-navy-950/80 to-navy-900/20" aria-hidden="true" />
         <div className="absolute inset-0 -z-10 bg-gradient-to-t from-navy-950 via-transparent to-transparent" aria-hidden="true" />
         <div className="bg-grid absolute inset-0 -z-10" aria-hidden="true" />
-        <div className="glow drift -right-40 -top-40 -z-10 h-[34rem] w-[34rem] bg-navy-600/45" aria-hidden="true" />
-        <div className="glow drift-slow -bottom-40 left-1/3 -z-10 h-[26rem] w-[26rem] bg-spark-500/20" aria-hidden="true" />
+        <Rings className="absolute -right-48 top-10 -z-10 hidden w-[46rem] md:block xl:-right-24" />
 
         <div className="wrap pb-10 pt-16 lg:pt-28">
           <div className="hero-in max-w-3xl">
@@ -60,7 +61,7 @@ export default function Home() {
               </span>
               Open today until 10 pm · Urgent breakdown jobs accepted
             </p>
-            <p className="eyebrow">Rabale, Navi Mumbai · Est. 2008</p>
+            <p className="eyebrow">Lathe · Milling · Welding · Est. 2008</p>
             <h1 className="h-xl mt-5">
               Precision machining &amp; fabrication, <span className="text-gradient">made to your drawing.</span>
             </h1>
@@ -84,7 +85,7 @@ export default function Home() {
           <dl className="hero-in mt-14 grid grid-cols-2 gap-px overflow-hidden rounded-2xl border border-white/10 bg-white/10 backdrop-blur-md lg:mt-20 lg:grid-cols-4">
             {stats.map((s) => (
               <div key={s.label} className="bg-navy-950/60 px-5 py-5 sm:px-7 sm:py-6">
-                <dd className="font-display text-3xl font-extrabold tracking-tight text-white sm:text-4xl">{s.value}</dd>
+                <dd className="font-display text-3xl font-semibold tracking-tight text-white sm:text-4xl">{s.value}</dd>
                 <dt className="mt-1 text-xs text-white/60 sm:text-sm">{s.label}</dt>
               </div>
             ))}
@@ -132,18 +133,23 @@ export default function Home() {
 
       {/* Why us */}
       <section className="section border-y border-steel-200 bg-white">
-        <div className="wrap grid items-center gap-12 lg:grid-cols-2 lg:gap-16">
-          <div className="relative">
-            <div className="relative aspect-[4/3] overflow-hidden rounded-3xl bg-navy-900 shadow-[var(--shadow-lift)] reveal">
+        <div className="wrap grid gap-14 lg:grid-cols-[1fr_1.15fr] lg:items-start lg:gap-16">
+          <div className="reveal relative pb-8 lg:sticky lg:top-32 lg:pb-0">
+            <div className="relative aspect-[4/3] h-full overflow-hidden rounded-3xl bg-navy-900 shadow-[var(--shadow-lift)] lg:aspect-auto lg:h-[36rem]">
               <Image
                 src="/images/generated/quality-inspection.webp"
                 alt="Turned steel shaft being measured with a digital vernier caliper"
                 fill
-                sizes="(min-width: 1024px) 50vw, 100vw"
+                sizes="(min-width: 1024px) 45vw, 100vw"
                 className="object-cover"
               />
+              <div className="absolute inset-0 bg-gradient-to-t from-navy-950/70 via-transparent to-transparent" aria-hidden="true" />
+              <div className="on-dark absolute left-5 top-5 rounded-2xl border border-white/15 bg-navy-950/60 px-5 py-4 text-white backdrop-blur-md">
+                <p className="font-display text-3xl font-semibold leading-none">25+</p>
+                <p className="mt-1.5 text-xs text-white/70">years on the tools</p>
+              </div>
             </div>
-            <div className="card reveal absolute -bottom-6 left-4 flex items-center gap-4 p-4 sm:left-8 sm:p-5">
+            <div className="card absolute bottom-0 left-5 right-5 flex items-center gap-4 p-4 sm:right-auto sm:p-5 lg:bottom-6 lg:left-6">
               <span className="icon-tile">
                 <Icon name="badge-check" size={22} />
               </span>
@@ -159,9 +165,9 @@ export default function Home() {
               title="A workshop that treats your breakdown like its own."
               lead="Started in 2008 by Mr. N. Hassan Khan, a machinist with over 25 years of experience in Indian and Gulf workshops. Send us your drawing. We will make the part."
             />
-            <div className="mt-10 grid gap-x-8 gap-y-7 sm:grid-cols-2">
+            <div className="reveal-group mt-10 grid gap-4 sm:grid-cols-2">
               {strengths.map((s) => (
-                <div key={s.title} className="reveal flex gap-4">
+                <div key={s.title} className="reveal flex gap-4 rounded-2xl border border-steel-200 bg-steel-50 p-5 transition-colors hover:border-navy-300 hover:bg-white">
                   <span className="icon-tile">
                     <Icon name={s.icon} size={21} />
                   </span>
@@ -195,26 +201,28 @@ export default function Home() {
               <Icon name="arrow-right" size={17} />
             </Link>
           </div>
-          <div className="mt-12 reveal-group grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
-            {industries.map((i) => (
-              <IndustryTile key={i.slug} item={i} />
-            ))}
-            <Link
-              href="/contact"
-              className="flex min-h-[15rem] flex-col justify-between rounded-2xl border border-dashed border-white/25 bg-white/5 p-5 transition-colors hover:bg-white/10"
-            >
-              <span className="grid h-10 w-10 place-items-center rounded-xl bg-spark-500 text-white">
-                <Icon name="plus" size={20} />
-              </span>
-              <span>
-                <span className="block font-display text-lg font-bold text-white">Different industry?</span>
-                <span className="mt-1.5 block text-sm text-white/70">
-                  If it is made of metal and has a drawing or a sample, we can probably make it. Ask us.
-                </span>
-              </span>
-            </Link>
-          </div>
         </div>
+        <ScrollRow className="mt-10">
+          {industries.map((i) => (
+            <div key={i.slug} className="w-[min(19rem,78vw)]">
+              <IndustryTile item={i} />
+            </div>
+          ))}
+          <Link
+            href="/contact"
+            className="flex min-h-[15rem] w-[min(19rem,78vw)] flex-col justify-between rounded-2xl border border-dashed border-white/25 bg-white/5 p-5 transition-colors hover:bg-white/10"
+          >
+            <span className="grid h-10 w-10 place-items-center rounded-xl bg-spark-500 text-white">
+              <Icon name="plus" size={20} />
+            </span>
+            <span>
+              <span className="block font-display text-lg font-semibold text-white">Different industry?</span>
+              <span className="mt-1.5 block text-sm text-white/70">
+                If it is made of metal and has a drawing or a sample, we can probably make it. Ask us.
+              </span>
+            </span>
+          </Link>
+        </ScrollRow>
       </section>
 
       {/* Process */}
@@ -228,7 +236,7 @@ export default function Home() {
           <ol className="reveal-group mt-14 grid gap-5 sm:grid-cols-2 lg:grid-cols-5">
             {process.map((step, i) => (
               <li key={step.title} className="card card-hover reveal relative p-6">
-                <span className="absolute right-5 top-4 font-display text-4xl font-extrabold text-navy-100">
+                <span className="absolute right-5 top-4 font-display text-4xl font-semibold text-navy-100">
                   {String(i + 1).padStart(2, '0')}
                 </span>
                 <span className="icon-tile">
@@ -256,19 +264,21 @@ export default function Home() {
               View gallery
             </Link>
           </div>
-          <div className="mt-12 grid grid-cols-2 gap-4 md:grid-cols-4">
-            {gallery.slice(1, 5).map((img) => (
-              <Link key={img.src} href="/gallery" className="reveal group relative aspect-[3/4] overflow-hidden rounded-2xl bg-navy-900">
-                <Image
-                  src={img.src}
-                  alt={img.alt}
-                  fill
-                  sizes="(min-width: 768px) 25vw, 50vw"
-                  className="object-cover transition-transform duration-700 group-hover:scale-105"
-                />
-              </Link>
-            ))}
-          </div>
+        </div>
+        <ScrollRow reverse className="mt-8">
+          {gallery.slice(0, 8).map((img) => (
+            <Link key={img.src} href="/gallery" className="group relative block h-72 w-56 overflow-hidden rounded-2xl bg-navy-900 sm:h-80 sm:w-64">
+              <Image
+                src={img.src}
+                alt={img.alt}
+                fill
+                sizes="256px"
+                className="object-cover transition-transform duration-700 group-hover:scale-105"
+              />
+            </Link>
+          ))}
+        </ScrollRow>
+        <div className="wrap">
           <div className="mt-10">
             <VideoGrid videos={videos} />
           </div>
@@ -289,39 +299,39 @@ export default function Home() {
       <section className="section">
         <div className="wrap">
           <SectionHeading eyebrow="Customer feedback" title="What our customers say." />
-          <div className="mt-12 grid gap-5 md:grid-cols-2 lg:grid-cols-3">
-            {testimonials.map((t) => (
-              <figure key={t.name} className="card card-hover reveal flex flex-col p-6">
-                <Icon name="quote" size={28} className="text-spark-500" />
-                <blockquote className="mt-4 flex-1 leading-relaxed text-steel-800" lang="hi-Latn">
-                  {t.quote}
-                </blockquote>
-                <figcaption className="mt-6 flex items-center gap-3 border-t border-steel-100 pt-4">
-                  <span className="grid h-10 w-10 place-items-center rounded-full bg-navy-700 font-display font-bold text-white">
-                    {t.name[0]}
-                  </span>
-                  <span>
-                    <span className="block text-sm font-bold text-navy-900">{t.name}</span>
-                    <span className="block text-xs text-steel-400">{t.role}</span>
-                  </span>
-                </figcaption>
-              </figure>
-            ))}
-            <div className="on-dark flex flex-col justify-between rounded-[1.1rem] bg-brand p-6 text-white">
-              <div>
-                <Icon name="message-circle" size={28} className="text-spark-400" />
-                <h3 className="mt-4 text-xl font-bold">Have a job in mind?</h3>
-                <p className="mt-2 text-sm leading-relaxed text-white/75">
-                  Send a photo of the part or your drawing and get a clear answer on price and timing.
-                </p>
-              </div>
-              <Link href="/contact" className="btn btn-primary mt-6 self-start">
-                Request a quote
-                <Icon name="arrow-right" size={17} />
-              </Link>
-            </div>
-          </div>
         </div>
+        <ScrollRow className="mt-8">
+          {testimonials.map((t) => (
+            <figure key={t.name} className="card flex w-[min(24rem,82vw)] flex-col p-6">
+              <Icon name="quote" size={28} className="text-spark-500" />
+              <blockquote className="mt-4 flex-1 leading-relaxed text-steel-800" lang="hi-Latn">
+                {t.quote}
+              </blockquote>
+              <figcaption className="dotted-top mt-6 flex items-center gap-3 pt-4">
+                <span className="grid h-10 w-10 place-items-center rounded-full bg-navy-900 font-display font-semibold text-white">
+                  {t.name[0]}
+                </span>
+                <span>
+                  <span className="block text-sm font-bold text-navy-900">{t.name}</span>
+                  <span className="block text-xs text-steel-400">{t.role}</span>
+                </span>
+              </figcaption>
+            </figure>
+          ))}
+          <div className="on-dark bg-brand flex w-[min(24rem,82vw)] flex-col justify-between rounded-[1.1rem] p-6 text-white">
+            <div>
+              <Icon name="message-circle" size={28} className="text-spark-400" />
+              <h3 className="mt-4 text-xl font-semibold">Have a job in mind?</h3>
+              <p className="mt-2 text-sm leading-relaxed text-white/75">
+                Send a photo of the part or your drawing and get a clear answer on price and timing.
+              </p>
+            </div>
+            <Link href="/contact" className="btn btn-primary mt-6 self-start">
+              Request a quote
+              <Icon name="arrow-right" size={17} />
+            </Link>
+          </div>
+        </ScrollRow>
       </section>
 
       {/* Areas */}

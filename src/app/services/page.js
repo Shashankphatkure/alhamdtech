@@ -46,7 +46,7 @@ export default function ServicesPage() {
           <ol className="reveal-group mt-14 grid gap-5 sm:grid-cols-2 lg:grid-cols-5">
             {process.map((step, i) => (
               <li key={step.title} className="card card-hover reveal relative p-6">
-                <span className="absolute right-5 top-4 font-display text-4xl font-extrabold text-navy-100">
+                <span className="absolute right-5 top-4 font-display text-4xl font-semibold text-navy-100">
                   {String(i + 1).padStart(2, '0')}
                 </span>
                 <span className="icon-tile">
