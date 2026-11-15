@@ -73,8 +73,8 @@ export default function AboutPage() {
         </div>
       </section>
 
-      <section className="on-dark relative isolate overflow-hidden bg-navy-950 py-14 text-white">
-        <div className="bg-grid absolute inset-0 -z-10" aria-hidden="true" />
+      <section className="on-dark relative overflow-hidden bg-navy-950 py-14 text-white">
+        <div className="bg-grid absolute inset-0 z-0" aria-hidden="true" />
         <dl className="wrap grid grid-cols-2 gap-8 lg:grid-cols-4">
           {stats.map((s) => (
             <div key={s.label}>

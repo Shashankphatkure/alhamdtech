@@ -38,19 +38,19 @@ export default function Home() {
   return (
     <>
       {/* Hero */}
-      <section className="on-dark relative isolate overflow-hidden bg-navy-950 text-white">
+      <section className="on-dark relative overflow-hidden bg-navy-950 text-white">
         <Image
           src="/images/generated/hero-workshop.webp"
           alt="Lathes and milling machines on an engineering workshop floor"
           fill
           priority
           sizes="100vw"
-          className="ken-burns -z-20 object-cover opacity-55"
+          className="ken-burns z-0 object-cover opacity-55"
         />
-        <div className="absolute inset-0 -z-10 bg-gradient-to-r from-navy-950 via-navy-950/80 to-navy-900/20" aria-hidden="true" />
-        <div className="absolute inset-0 -z-10 bg-gradient-to-t from-navy-950 via-transparent to-transparent" aria-hidden="true" />
-        <div className="bg-grid absolute inset-0 -z-10" aria-hidden="true" />
-        <Rings className="absolute -right-48 top-10 -z-10 hidden w-[46rem] md:block xl:-right-24" />
+        <div className="absolute inset-0 z-0 bg-gradient-to-r from-navy-950 via-navy-950/80 to-navy-900/20" aria-hidden="true" />
+        <div className="absolute inset-0 z-0 bg-gradient-to-t from-navy-950 via-transparent to-transparent" aria-hidden="true" />
+        <div className="bg-grid absolute inset-0 z-0" aria-hidden="true" />
+        <Rings className="absolute -right-48 top-10 z-0 hidden w-[46rem] md:block xl:-right-24" />
 
         <div className="wrap pb-10 pt-16 lg:pt-28">
           <div className="hero-in max-w-3xl">
@@ -187,8 +187,8 @@ export default function Home() {
       </section>
 
       {/* Industries */}
-      <section className="on-dark section relative isolate overflow-hidden bg-navy-950 text-white">
-        <div className="bg-grid absolute inset-0 -z-10" aria-hidden="true" />
+      <section className="on-dark section relative overflow-hidden bg-navy-950 text-white">
+        <div className="bg-grid absolute inset-0 z-0" aria-hidden="true" />
         <div className="wrap">
           <div className="flex flex-col justify-between gap-6 lg:flex-row lg:items-end">
             <SectionHeading

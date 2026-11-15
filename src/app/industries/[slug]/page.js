@@ -77,8 +77,8 @@ export default async function IndustryPage({ params }) {
         </div>
       </section>
 
-      <section className="on-dark section relative isolate overflow-hidden bg-navy-950 text-white">
-        <div className="bg-grid absolute inset-0 -z-10" aria-hidden="true" />
+      <section className="on-dark section relative overflow-hidden bg-navy-950 text-white">
+        <div className="bg-grid absolute inset-0 z-0" aria-hidden="true" />
         <div className="wrap">
           <SectionHeading eyebrow="What matters here" title="How we approach this work." />
           <div className="mt-12 reveal-group grid gap-5 md:grid-cols-3">

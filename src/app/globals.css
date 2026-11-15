@@ -84,6 +84,8 @@ p {
 
 @layer components {
   .wrap {
+    position: relative;
+    z-index: 2;
     width: 100%;
     max-width: 78rem;
     margin-inline: auto;
@@ -402,3 +404,24 @@ html.js-reveal .scroll-track .reveal { opacity: 1 !important; animation: none !i
 /* Dotted hairline, as used between rows in the brochure */
 .dotted-top { border-top: 1.5px dotted rgb(15 27 45 / 0.25); }
 .on-dark .dotted-top, .on-dark.dotted-top { border-top-color: rgb(255 255 255 / 0.25); }
+
+/* ---------- Page guide lines ----------
+   Two hairlines running the full height of the page at the edges of the content column.
+   They sit above section backgrounds and below content. */
+main { position: relative; }
+main::before {
+  content: "";
+  position: absolute;
+  inset-block: 0;
+  left: 50%;
+  width: min(100% - 2rem, 76rem);
+  transform: translateX(-50%);
+  border-inline: 1px solid rgb(125 140 165 / 0.2);
+  pointer-events: none;
+  z-index: 1;
+  display: none;
+}
+@media (min-width: 640px) {
+  main::before { display: block; }
+}
+.scroll-row, .marquee { position: relative; z-index: 2; }
