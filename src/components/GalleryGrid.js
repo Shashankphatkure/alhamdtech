@@ -2,6 +2,7 @@
 
 import Image from 'next/image';
 import { useCallback, useEffect, useState } from 'react';
+import { createPortal } from 'react-dom';
 import Icon from './Icon';
 
 export default function GalleryGrid({ images }) {
@@ -50,7 +51,8 @@ export default function GalleryGrid({ images }) {
         ))}
       </div>
 
-      {active !== null && (
+      {active !== null &&
+        createPortal(
         <div className="fixed inset-0 z-50 flex items-center justify-center bg-navy-950/95 p-4" role="dialog" aria-modal="true" aria-label="Photo viewer" onClick={close}>
           <button type="button" onClick={close} aria-label="Close" className="absolute right-4 top-4 grid h-11 w-11 place-items-center rounded-full bg-white/10 text-white hover:bg-white/20">
             <Icon name="x" size={22} />
@@ -82,7 +84,8 @@ export default function GalleryGrid({ images }) {
           >
             <Icon name="chevron-right" size={22} />
           </button>
-        </div>
+        </div>,
+        document.body
       )}
     </>
   );
