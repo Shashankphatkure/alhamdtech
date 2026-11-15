@@ -1,6 +1,7 @@
 import Link from 'next/link';
 import Icon from './Icon';
 import QuoteButtons from './QuoteButtons';
+import Rings from './Rings';
 
 export default function CtaBand({
   title = 'Send us your drawing. We’ll make the part.',
@@ -8,10 +9,10 @@ export default function CtaBand({
   subject,
 }) {
   return (
-    <section className="wrap pb-20 lg:pb-28">
+    <section className="wrap section-bottom">
       <div className="on-dark relative isolate overflow-hidden reveal rounded-[1.75rem] bg-brand px-6 py-12 text-white sm:px-12 lg:px-16 lg:py-16">
         <div className="bg-grid absolute inset-0 -z-10" aria-hidden="true" />
-        <div className="glow drift -right-24 -top-24 -z-10 h-80 w-80 bg-spark-500/40" aria-hidden="true" />
+        <Rings className="absolute -bottom-44 -right-24 -z-10 w-[30rem] opacity-80" />
         <div className="grid items-center gap-8 lg:grid-cols-[1.4fr_1fr]">
           <div>
             <h2 className="h-lg">{title}</h2>

@@ -1,6 +1,7 @@
 import Link from 'next/link';
 import Icon from './Icon';
 import Logo from './Logo';
+import Rings from './Rings';
 import { site, fullAddress, whatsappLink } from '@/lib/site';
 import { services } from '@/data/services';
 import { industries } from '@/data/industries';
@@ -20,7 +21,7 @@ const company = [
 function Column({ title, children }) {
   return (
     <div>
-      <h2 className="mb-4 font-display text-sm font-bold uppercase tracking-[0.14em] !text-white">{title}</h2>
+      <h2 className="mb-4 font-sans text-xs font-bold uppercase tracking-[0.2em] !text-spark-400">{title}</h2>
       <ul className="grid gap-2.5 text-sm text-white/65">{children}</ul>
     </div>
   );
@@ -40,6 +41,7 @@ export default function Footer() {
   return (
     <footer className="on-dark relative overflow-hidden bg-navy-950 text-white">
       <div className="bg-grid absolute inset-0 opacity-60" aria-hidden="true" />
+      <Rings spin={false} className="absolute -right-48 -top-56 w-[36rem] opacity-40" />
       <div className="wrap relative pb-10 pt-16">
         <div className="grid gap-12 lg:grid-cols-[1.3fr_3fr]">
           <div>

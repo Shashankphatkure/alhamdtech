@@ -36,7 +36,7 @@ export default function GalleryPage() {
       <section className="section border-y border-steel-200 bg-white">
         <div className="wrap">
           <SectionHeading eyebrow="Videos" title="See the machines at work." lead="Clips from our YouTube channel." />
-          <div className="mt-10">
+          <div className="mt-12">
             <VideoGrid videos={videos} />
           </div>
           <a href={site.youtube} target="_blank" rel="noopener noreferrer" className="btn btn-outline mt-8">
@@ -46,7 +46,7 @@ export default function GalleryPage() {
         </div>
       </section>
 
-      <div className="pt-20 lg:pt-28">
+      <div className="section-top">
         <CtaBand />
       </div>
 

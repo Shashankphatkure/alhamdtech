@@ -78,7 +78,7 @@ export default function AboutPage() {
         <dl className="wrap grid grid-cols-2 gap-8 lg:grid-cols-4">
           {stats.map((s) => (
             <div key={s.label}>
-              <dd className="font-display text-4xl font-extrabold tracking-tight text-white sm:text-5xl">{s.value}</dd>
+              <dd className="font-display text-4xl font-semibold tracking-tight text-white sm:text-5xl">{s.value}</dd>
               <dt className="mt-2 text-sm text-white/60">{s.label}</dt>
             </div>
           ))}
@@ -151,7 +151,7 @@ export default function AboutPage() {
         </div>
       </section>
 
-      <div className="pt-20 lg:pt-28">
+      <div className="section-top">
         <CtaBand />
       </div>
 

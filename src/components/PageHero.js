@@ -1,5 +1,6 @@
 import Image from 'next/image';
 import Breadcrumbs from './Breadcrumbs';
+import Rings from './Rings';
 
 export default function PageHero({ eyebrow, title, lead, image, imageAlt = '', crumbs, children }) {
   return (
@@ -11,10 +12,11 @@ export default function PageHero({ eyebrow, title, lead, image, imageAlt = '', c
       <div className="bg-grid absolute inset-0 -z-10" aria-hidden="true" />
       <div className="wrap pb-16 pt-10 lg:pb-24 lg:pt-14">
         {crumbs && <Breadcrumbs items={crumbs} />}
-        <div className="glow drift -right-32 top-0 -z-10 h-96 w-96 bg-navy-600/40" aria-hidden="true" />
+        <Rings className="absolute -bottom-40 -right-28 -z-10 hidden w-[34rem] opacity-90 md:block lg:-right-10" />
         <div className="hero-in mt-10 max-w-3xl lg:mt-14">
           {eyebrow && <p className="eyebrow">{eyebrow}</p>}
           <h1 className="h-xl mt-4">{title}</h1>
+          <span className="rule mt-6" aria-hidden="true" />
           {lead && <p className="lead mt-6 max-w-2xl">{lead}</p>}
           {children && <div className="mt-8 flex flex-wrap gap-3">{children}</div>}
         </div>

@@ -50,7 +50,7 @@ export default function CareersPage() {
         <div className="wrap grid gap-12 lg:grid-cols-[1.4fr_1fr] lg:gap-16">
           <div>
             <SectionHeading eyebrow="Open roles" title="Who we are looking for" />
-            <div className="reveal-group mt-10 grid gap-5 sm:grid-cols-2">
+            <div className="reveal-group mt-12 grid gap-5 sm:grid-cols-2">
               {roles.map((r) => (
                 <div key={r.title} className="card card-hover reveal p-6">
                   <span className="icon-tile">
@@ -62,7 +62,7 @@ export default function CareersPage() {
               ))}
             </div>
 
-            <h2 className="h-md mt-14">What helps</h2>
+            <h2 className="h-md mt-12">What helps</h2>
             <div className="mt-6">
               <CheckList
                 items={[
@@ -74,7 +74,7 @@ export default function CareersPage() {
               />
             </div>
 
-            <h2 className="h-md mt-14">Know someone suitable?</h2>
+            <h2 className="h-md mt-12">Know someone suitable?</h2>
             <p className="lead mt-3">Referrals are welcome. Call or email us with their name and number.</p>
           </div>
 

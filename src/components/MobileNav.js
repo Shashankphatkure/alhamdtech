@@ -44,7 +44,7 @@ export default function MobileNav() {
           <button type="button" aria-label="Close menu" className="absolute inset-0 bg-navy-950/60 backdrop-blur-sm" onClick={() => setOpen(false)} />
           <div className="animate-[drawer-in_0.28s_ease-out] absolute inset-y-0 right-0 flex w-[min(22rem,90vw)] flex-col bg-white shadow-2xl">
             <div className="flex h-[4.25rem] items-center justify-between border-b border-steel-200 px-5">
-              <span className="font-display text-lg font-extrabold text-navy-900">Menu</span>
+              <span className="font-display text-lg font-semibold text-navy-900">Menu</span>
               <button
                 type="button"
                 onClick={() => setOpen(false)}

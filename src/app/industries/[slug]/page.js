@@ -84,7 +84,7 @@ export default async function IndustryPage({ params }) {
           <div className="mt-12 reveal-group grid gap-5 md:grid-cols-3">
             {industry.considerations.map((c, i) => (
               <div key={c.title} className="rounded-2xl border border-white/10 bg-white/5 p-6 backdrop-blur">
-                <span className="font-display text-sm font-bold text-spark-400">{String(i + 1).padStart(2, '0')}</span>
+                <span className="font-display text-sm font-semibold text-spark-400">{String(i + 1).padStart(2, '0')}</span>
                 <h3 className="mt-3 text-lg font-bold">{c.title}</h3>
                 <p className="mt-2 text-sm leading-relaxed text-white/70">{c.text}</p>
               </div>
@@ -96,7 +96,7 @@ export default async function IndustryPage({ params }) {
       <section className="section">
         <div className="wrap">
           <SectionHeading eyebrow="Processes used" title="Services behind these components" />
-          <div className="mt-10 reveal-group grid gap-5 sm:grid-cols-2 xl:grid-cols-4">
+          <div className="mt-12 reveal-group grid gap-5 sm:grid-cols-2 xl:grid-cols-4">
             {used.map((s) => (
               <ServiceCard key={s.slug} item={s} />
             ))}

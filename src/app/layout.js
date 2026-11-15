@@ -1,14 +1,15 @@
-import { Inter, Archivo } from 'next/font/google';
+import { Inter, Source_Serif_4 } from 'next/font/google';
 import './globals.css';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import JsonLd from '@/components/JsonLd';
 import Icon from '@/components/Icon';
+import RevealObserver from '@/components/RevealObserver';
 import { site, whatsappLink } from '@/lib/site';
 import { localBusinessSchema } from '@/lib/seo';
 
 const inter = Inter({ subsets: ['latin'], variable: '--font-inter', display: 'swap' });
-const archivo = Archivo({ subsets: ['latin'], variable: '--font-archivo', display: 'swap' });
+const serif = Source_Serif_4({ subsets: ['latin'], variable: '--font-serif', display: 'swap' });
 
 export const metadata = {
   metadataBase: new URL(site.url),
@@ -33,15 +34,24 @@ export const metadata = {
 };
 
 export const viewport = {
-  themeColor: '#1a3be0',
+  themeColor: '#0f1b2d',
   width: 'device-width',
   initialScale: 1,
 };
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="en-IN" className={`${inter.variable} ${archivo.variable}`}>
+    <html lang="en-IN" suppressHydrationWarning className={`${inter.variable} ${serif.variable}`}>
+      <head>
+        <script
+          dangerouslySetInnerHTML={{
+            __html:
+              "(function(){try{var d=document.documentElement;if(matchMedia('(prefers-reduced-motion: reduce)').matches)return;d.classList.add('js-reveal');setTimeout(function(){if(!d.dataset.revealReady)d.classList.remove('js-reveal')},4000)}catch(e){}})()",
+          }}
+        />
+      </head>
       <body className="flex min-h-screen flex-col">
+        <RevealObserver />
         <a href="#main" className="sr-only focus:not-sr-only focus:fixed focus:left-4 focus:top-4 focus:z-[60] focus:rounded-lg focus:bg-white focus:px-4 focus:py-2 focus:text-navy-900">
           Skip to content
         </a>

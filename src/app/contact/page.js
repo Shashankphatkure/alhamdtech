@@ -47,7 +47,7 @@ export default function ContactPage() {
                 </span>
                 <span className="min-w-0">
                   <span className="block text-xs font-semibold uppercase tracking-wider text-steel-400">{c.label}</span>
-                  <span className="block truncate font-display text-base font-bold text-navy-900">{c.value}</span>
+                  <span className="block truncate font-display text-base font-semibold text-navy-900">{c.value}</span>
                   <span className="block text-xs text-steel-600">{c.note}</span>
                 </span>
               </a>
