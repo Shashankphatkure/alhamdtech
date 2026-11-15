@@ -14,7 +14,7 @@ import { stats, strengths } from '@/data/content';
 export const metadata = pageMeta({
   title: 'About Alhamd Technologies: Machine Workshop in Rabale, Navi Mumbai',
   description:
-    'About Alhamd Technologies, a machining and fabrication workshop on MIDC Road, Rabale, Navi Mumbai. Over a decade of lathe, milling, CNC and welding job work for industry.',
+    'About Alhamd Technologies, a machining and fabrication workshop on MIDC Road, Rabale, Navi Mumbai. Established in 2008 by machinist N. Hassan Khan. Lathe, milling, CNC and welding job work for industry.',
   path: '/about',
   image: '/images/generated/about-workshop.webp',
 });
@@ -25,7 +25,7 @@ export default function AboutPage() {
       <PageHero
         eyebrow="About us"
         title="Where excellence is not just a goal, but a guarantee."
-        lead="Alhamd Technologies is a hands-on machining and fabrication workshop in Rabale MIDC, making and repairing industrial components for customers across Navi Mumbai, Thane and Mumbai."
+        lead="A precision machining workshop in Rabale, Navi Mumbai, started in 2008 by a machinist with over 25 years on the tools. Custom parts and repairs, made to your sample or drawing."
         image="/images/generated/about-workshop.webp"
         crumbs={[{ name: 'About', href: '/about' }]}
       >
@@ -35,10 +35,15 @@ export default function AboutPage() {
       <section className="section">
         <div className="wrap grid items-center gap-12 lg:grid-cols-2 lg:gap-16">
           <div>
-            <SectionHeading eyebrow="Our workshop" title="Built around the jobs other shops turn away." />
+            <SectionHeading eyebrow="Our story · Est. 2008" title="Built on hands-on experience." />
             <div className="prose-body mt-6">
               <p>
-                With over a decade of experience on the shop floor, we have built our reputation one job at a time: the
+                Alhamd Technologies was started in Navi Mumbai in 2008 by Mr. N. Hassan Khan, a machinist with over 25
+                years of experience in Indian and Gulf workshops, from heavy-duty machining for oil and marine work to
+                CNC operation. The workshop is built on that hands-on experience.
+              </p>
+              <p>
+                Since then we have built our reputation one job at a time: the
                 shaft that had to be back in the crusher by morning, the plodder worm copied from a part worn beyond
                 recognition, the batch of flanges needed before a shutdown ended.
               </p>

@@ -19,7 +19,7 @@ export const metadata = pageMeta({
   title: 'Alhamd Technologies | CNC Machining, Lathe & Fabrication Job Work in Navi Mumbai',
   absoluteTitle: true,
   description:
-    'Machining and fabrication workshop in Rabale, Navi Mumbai. CNC machining, lathe and milling job work, welding, wire cut EDM, laser and plasma cutting. Open 8 am – 10 pm daily. Call +91 90227 26250.',
+    'Precision machining and fabrication workshop in Rabale, Navi Mumbai, est. 2008. CNC machining, lathe and milling job work, welding, wire cut EDM, laser and plasma cutting. Open 8 am – 10 pm daily. Call +91 90227 26250.',
   path: '/',
   keywords: [
     'machining job work Navi Mumbai',
@@ -60,13 +60,13 @@ export default function Home() {
               </span>
               Open today until 10 pm · Urgent breakdown jobs accepted
             </p>
-            <p className="eyebrow">Rabale MIDC · Navi Mumbai</p>
+            <p className="eyebrow">Rabale, Navi Mumbai · Est. 2008</p>
             <h1 className="h-xl mt-5">
               Precision machining &amp; fabrication, <span className="text-gradient">made to your drawing.</span>
             </h1>
             <p className="lead mt-6 max-w-2xl">
-              Alhamd Technologies is a job-work workshop for industrial components. CNC machining, lathe and milling
-              work, welding, EDM and cutting under one roof, for one urgent spare or a full production batch.
+              Custom parts and repairs from a workshop built on 25+ years of hands-on machining experience. Lathe,
+              milling, CNC, welding and cutting under one roof, for one urgent spare or a repeat order.
             </p>
             <div className="mt-9 flex flex-wrap gap-3">
               <QuoteButtons />
@@ -114,7 +114,7 @@ export default function Home() {
           <div className="flex flex-col justify-between gap-6 lg:flex-row lg:items-end">
             <SectionHeading
               eyebrow="What we do"
-              title="Eight processes. One workshop."
+              title="From raw bar to finished part."
               lead="Most parts need more than one operation. Keeping cutting, machining and welding together means your job moves from raw material to finished component without leaving the building."
             />
             <Link href="/services" className="btn btn-outline self-start lg:self-auto">
@@ -157,7 +157,7 @@ export default function Home() {
             <SectionHeading
               eyebrow="Why Alhamd Technologies"
               title="A workshop that treats your breakdown like its own."
-              lead="Where excellence is not just a goal, but a guarantee. Here is what that means in practice."
+              lead="Started in 2008 by Mr. N. Hassan Khan, a machinist with over 25 years of experience in Indian and Gulf workshops. Send us your drawing. We will make the part."
             />
             <div className="mt-10 grid gap-x-8 gap-y-7 sm:grid-cols-2">
               {strengths.map((s) => (

@@ -6,9 +6,13 @@ export const site = {
   shortName: 'Alhamd Tech',
   // Set NEXT_PUBLIC_SITE_URL in the hosting dashboard when a custom domain is connected.
   url: (process.env.NEXT_PUBLIC_SITE_URL || 'https://alhamdtech.vercel.app').replace(/\/$/, ''),
+  founded: 2008,
+  founder: 'N. Hassan Khan',
+  // Domain printed on the company brochure. Point NEXT_PUBLIC_SITE_URL at it once it is connected.
+  brochureDomain: 'https://www.alhamdtechnologies.in',
   tagline: 'Precision machining & fabrication job work in Navi Mumbai',
   description:
-    'Alhamd Technologies is a machining and fabrication workshop in Rabale, Navi Mumbai. CNC machining, lathe and milling job work, welding, EDM wire cut, laser and plasma cutting for industrial components.',
+    'Alhamd Technologies is a precision machining and fabrication workshop in Rabale, Navi Mumbai, established in 2008. CNC machining, lathe and milling job work, welding, EDM wire cut, laser and plasma cutting for industrial components.',
   phone: '+91 90227 26250',
   phoneHref: 'tel:+919022726250',
   whatsapp: '919022726250',
@@ -47,5 +51,6 @@ export const nav = [
   { label: 'Gallery', href: '/gallery' },
   { label: 'Blog', href: '/blog' },
   { label: 'About', href: '/about' },
+  { label: 'Careers', href: '/careers' },
   { label: 'Contact', href: '/contact' },
 ];

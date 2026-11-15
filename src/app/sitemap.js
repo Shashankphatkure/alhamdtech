@@ -26,6 +26,7 @@ export default function sitemap() {
     page('/gallery', 0.6),
     page('/contact', 0.8),
     page('/faq', 0.6),
+    page('/careers', 0.5),
     page('/blog', 0.7, 'weekly'),
     ...posts.map((p) => page(`/blog/${p.slug}`, 0.6, 'yearly', new Date(p.date))),
     page('/privacy-policy', 0.2, 'yearly'),

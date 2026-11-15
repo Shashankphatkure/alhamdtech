@@ -13,6 +13,7 @@ const company = [
   { label: 'Blog & guides', href: '/blog' },
   { label: 'FAQ', href: '/faq' },
   { label: 'Areas we serve', href: '/locations' },
+  { label: 'Careers', href: '/careers' },
   { label: 'Contact', href: '/contact' },
 ];
 
@@ -44,8 +45,8 @@ export default function Footer() {
           <div>
             <Logo dark />
             <p className="mt-5 max-w-sm text-sm leading-relaxed text-white/65">
-              Machining and fabrication workshop in Rabale, Navi Mumbai. Industrial components made and repaired to your
-              drawing or sample.
+              Precision machining and fabrication workshop in Rabale, Navi Mumbai. Est. 2008. Custom parts and repairs,
+              made to your sample or drawing.
             </p>
             <ul className="mt-6 grid gap-3 text-sm text-white/80">
               <li className="flex gap-3">

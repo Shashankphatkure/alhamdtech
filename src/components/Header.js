@@ -68,7 +68,7 @@ export default function Header() {
           <nav className="hidden items-center lg:flex" aria-label="Main">
             <Dropdown label="Services" href="/services" items={services} base="/services" columns={2} />
             <Dropdown label="Industries" href="/industries" items={industries} base="/industries" columns={2} />
-            {nav.slice(2).map((item) => (
+            {nav.slice(2).filter((item) => item.href !== '/careers').map((item) => (
               <Link
                 key={item.href}
                 href={item.href}

@@ -1,7 +1,7 @@
 export const stats = [
-  { value: '10+', label: 'Years of workshop experience' },
-  { value: '200+', label: 'Projects completed' },
-  { value: '8', label: 'Machining & fabrication processes' },
+  { value: '25+', label: 'Years of machining experience' },
+  { value: '2008', label: 'Established in Navi Mumbai' },
+  { value: '7', label: 'Industry segments served' },
   { value: '7 days', label: 'Open 8 am – 10 pm' },
 ];
 
@@ -35,6 +35,7 @@ export const materials = [
 
 export const generalFaqs = [
   { q: 'What does Alhamd Technologies do?', a: 'We are a machining and fabrication workshop in Rabale, Navi Mumbai. We make and repair industrial components to your drawing or sample using CNC machining, lathe work, milling, drilling, tapping, slotting, band saw cutting, welding, wire cut EDM and laser and plasma cutting.' },
+  { q: 'Who runs Alhamd Technologies and when was it established?', a: 'Alhamd Technologies was established in Navi Mumbai in 2008 by Mr. N. Hassan Khan, a machinist with over 25 years of experience in Indian and Gulf workshops, from heavy-duty machining for oil and marine work to CNC operation.' },
   { q: 'Where is your workshop located?', a: 'H No. 1890, Bhim Nagar, MIDC Road, opposite R-303, near Masjid, Rabale Naka, Rabale, Navi Mumbai, Maharashtra 400701. We are close to Rabale railway station and the Thane-Belapur Road.' },
   { q: 'What are your working hours?', a: 'We are open from 8 am to 10 pm, Monday to Sunday.' },
   { q: 'How do I get a quote?', a: 'Send your drawing, sample photos, material and quantity on WhatsApp or email, call us on +91 90227 26250, or use the enquiry form on the contact page. We reply with price and delivery time.' },
@@ -43,6 +44,7 @@ export const generalFaqs = [
   { q: 'Which materials do you work with?', a: 'Mild steel, carbon and alloy steels, stainless steel 304 and 316, aluminium, brass, bronze, cast iron and engineering plastics. You can supply material or we can source it.' },
   { q: 'Which industries do you serve?', a: 'Petroleum and petrochemical, oil and gas, soap manufacturing, crushing and quarrying, food processing, marine and general engineering.' },
   { q: 'Do you handle urgent breakdown jobs?', a: 'Yes. Because we are open late every day, urgent jobs are prioritised. Simple parts are often completed the same or next day when material is available.' },
+  { q: 'Are you hiring machinists?', a: 'Yes. We are looking for skilled lathe operators and machinists. Call +91 90227 26250 or email thealhamdtechnologies@gmail.com to apply or to refer someone.' },
   { q: 'Which areas do you serve?', a: 'Customers across Navi Mumbai, Thane and Mumbai, including Rabale, Airoli, Ghansoli, Mahape, Turbhe, Pawne and Taloja. Parts can also be sent by transport or courier to other cities.' },
   { q: 'Can I supply my own material?', a: 'Yes. Customer-supplied bar, plate, castings and forgings are welcome and are kept identified through the job.' },
   { q: 'Do you repair worn shafts and machine parts?', a: 'Yes. Worn bearing seats, damaged threads and keyways and cracked fabrications are repaired by welding, sleeving and re-machining when repair is the sound and economical option.' },

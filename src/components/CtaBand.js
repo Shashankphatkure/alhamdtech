@@ -3,7 +3,7 @@ import Icon from './Icon';
 import QuoteButtons from './QuoteButtons';
 
 export default function CtaBand({
-  title = 'Have a drawing or a broken part? Send it over.',
+  title = 'Send us your drawing. We’ll make the part.',
   text = 'Share a drawing, a sample or a photo with dimensions. We will come back with price and delivery, usually the same day.',
   subject,
 }) {

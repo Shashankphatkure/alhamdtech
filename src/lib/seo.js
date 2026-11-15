@@ -41,6 +41,9 @@ export function localBusinessSchema() {
     image: absoluteUrl(DEFAULT_IMAGE),
     logo: absoluteUrl('/icon.svg'),
     priceRange: '₹₹',
+    foundingDate: String(site.founded),
+    founder: { '@type': 'Person', name: site.founder, jobTitle: 'Founder and machinist' },
+    slogan: 'Send us your drawing. We will make the part.',
     address: {
       '@type': 'PostalAddress',
       streetAddress: `${site.address.line1}, ${site.address.line2}`,
