@@ -1,36 +1,43 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Alhamd Technologies website
 
-## Getting Started
+Marketing site for Alhamd Technologies, a machining and fabrication workshop in Rabale, Navi Mumbai.
+Built with Next.js (App Router) and Tailwind CSS v4. Every page is statically generated.
 
-First, run the development server:
+## Run locally
 
 ```bash
+npm install
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Where things live
 
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
+| What | File |
+| --- | --- |
+| Phone, email, address, hours, site URL | `src/lib/site.js` |
+| Services (8 pages) | `src/data/services.js` |
+| Industries (7 pages) | `src/data/industries.js` |
+| Area pages (8 pages) | `src/data/locations.js` |
+| Blog articles | `src/data/posts.js` |
+| Stats, FAQs, testimonials, gallery, videos, materials | `src/data/content.js` |
+| Colours, typography, animations | `src/app/globals.css` |
+| Metadata and JSON-LD helpers | `src/lib/seo.js` |
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+Adding an entry to a data file creates the page, adds it to the navigation and footer, and adds it to
+`/sitemap.xml` automatically.
 
-## Learn More
+## SEO setup
 
-To learn more about Next.js, take a look at the following resources:
+- Canonical URLs, Open Graph and Twitter tags on every page (`pageMeta` in `src/lib/seo.js`)
+- JSON-LD: LocalBusiness, WebSite, Service, FAQPage, BreadcrumbList, BlogPosting, ImageGallery, VideoObject
+- `/sitemap.xml`, `/robots.txt` and `/manifest.webmanifest` are generated from the data files
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+Environment variables (optional):
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+- `NEXT_PUBLIC_SITE_URL` – set when a custom domain is connected (defaults to `https://alhamdtech.vercel.app`)
+- `NEXT_PUBLIC_GSC_VERIFICATION` – Google Search Console verification token
 
-## Deploy on Vercel
+## Images
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+`public/images/generated/` holds AI-generated illustrative images used for services, industries and articles.
+`public/images/*.webp` are real photographs from the workshop, shown in the gallery.
