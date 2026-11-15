@@ -132,7 +132,7 @@ export default async function LocationPage({ params }) {
                 .filter((l) => l.slug !== loc.slug)
                 .map((l) => (
                   <li key={l.slug}>
-                    <Link href={`/locations/${l.slug}`} className="inline-block rounded-full bg-white px-3 py-1.5 text-xs font-semibold text-navy-700 ring-1 ring-steel-200 hover:ring-navy-700">
+                    <Link href={`/locations/${l.slug}`} className="inline-block rounded-none bg-white px-3 py-1.5 text-xs font-semibold text-navy-700 ring-1 ring-steel-200 hover:ring-navy-700">
                       {l.name}
                     </Link>
                   </li>

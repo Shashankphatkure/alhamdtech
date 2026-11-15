@@ -10,7 +10,7 @@ export default function CtaBand({
 }) {
   return (
     <section className="wrap section-bottom">
-      <div className="on-dark relative isolate overflow-hidden reveal rounded-[1.75rem] bg-brand px-6 py-12 text-white sm:px-12 lg:px-16 lg:py-16">
+      <div className="on-dark relative isolate overflow-hidden reveal rounded-none bg-brand px-6 py-12 text-white sm:px-12 lg:px-16 lg:py-16">
         <div className="bg-grid absolute inset-0 -z-10" aria-hidden="true" />
         <Rings className="absolute -bottom-44 -right-24 -z-10 w-[30rem] opacity-80" />
         <div className="grid items-center gap-8 lg:grid-cols-[1.4fr_1fr]">

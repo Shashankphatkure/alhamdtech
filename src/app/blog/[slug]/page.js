@@ -96,7 +96,7 @@ export default async function PostPage({ params }) {
           </div>
 
           {related.length > 0 && (
-            <aside className="mx-auto mt-14 max-w-3xl rounded-[1.1rem] border border-navy-100 bg-navy-50 p-6">
+            <aside className="mx-auto mt-14 max-w-3xl rounded-none border border-navy-100 bg-navy-50 p-6">
               <h2 className="font-display text-sm font-semibold uppercase tracking-[0.14em] text-navy-900">Related services</h2>
               <ul className="mt-4 flex flex-wrap gap-3">
                 {related.map((s) => (
