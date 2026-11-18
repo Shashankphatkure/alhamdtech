@@ -77,6 +77,9 @@ export default function ContactPage() {
               <div className="on-dark rounded-none bg-brand p-6 text-white">
                 <h2 className="h-md">Workshop address</h2>
                 <address className="mt-3 text-sm not-italic leading-relaxed text-white/80">{fullAddress}</address>
+                <p className="mt-3 text-sm text-white/80">
+                  GST: <span className="font-semibold tracking-wide text-white">{site.gst}</span>
+                </p>
                 <a href={site.mapLink} target="_blank" rel="noopener noreferrer" className="btn btn-primary mt-5">
                   <Icon name="navigation" size={17} />
                   Get directions

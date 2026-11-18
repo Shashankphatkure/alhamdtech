@@ -38,6 +38,7 @@ export function localBusinessSchema() {
     url: site.url,
     telephone: '+919022726250',
     email: site.email,
+    taxID: site.gst,
     image: absoluteUrl(DEFAULT_IMAGE),
     logo: absoluteUrl('/icon.svg'),
     priceRange: '₹₹',
@@ -62,7 +63,10 @@ export function localBusinessSchema() {
         closes: site.hours.closes,
       },
     ],
-    areaServed: ['Navi Mumbai', 'Thane', 'Mumbai', ...locations.map((l) => l.name)].filter((v, i, a) => a.indexOf(v) === i),
+    areaServed: [
+      ...['Navi Mumbai', 'Thane', 'Mumbai', ...locations.filter((l) => !l.region).map((l) => l.name)].filter((v, i, a) => a.indexOf(v) === i),
+      { '@type': 'State', name: 'Maharashtra' },
+    ],
     sameAs: [site.youtube],
     knowsAbout: services.map((s) => s.title),
     hasOfferCatalog: {
@@ -86,7 +90,7 @@ export function serviceSchema({ name, description, path, image, serviceType }) {
     url: absoluteUrl(path),
     image: image ? absoluteUrl(image) : undefined,
     provider: { '@id': businessId },
-    areaServed: ['Navi Mumbai', 'Thane', 'Mumbai'],
+    areaServed: ['Navi Mumbai', 'Thane', 'Mumbai', { '@type': 'State', name: 'Maharashtra' }],
   };
 }
 
