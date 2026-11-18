@@ -48,7 +48,7 @@ export default function Footer() {
             <Logo dark />
             <p className="mt-5 max-w-sm text-sm leading-relaxed text-white/65">
               Precision machining and fabrication workshop in Rabale, Navi Mumbai. Est. 2008. Custom parts and repairs,
-              made to your sample or drawing.
+              made to your sample or drawing, for customers all over Maharashtra.
             </p>
             <ul className="mt-6 grid gap-3 text-sm text-white/80">
               <li className="flex gap-3">
@@ -70,6 +70,12 @@ export default function Footer() {
               <li className="flex items-center gap-3">
                 <Icon name="clock" size={18} className="shrink-0 text-spark-400" />
                 {site.hours.days}, {site.hours.label}
+              </li>
+              <li className="flex items-center gap-3">
+                <Icon name="file-text" size={18} className="shrink-0 text-spark-400" />
+                <span>
+                  GST: <span className="font-semibold tracking-wide text-white">{site.gst}</span>
+                </span>
               </li>
             </ul>
             <div className="mt-6 flex gap-2">
@@ -112,7 +118,7 @@ export default function Footer() {
             <Column title="Areas served">
               {locations.map((l) => (
                 <FooterLink key={l.slug} href={`/locations/${l.slug}`}>
-                  {l.name}
+                  {l.label || l.name}
                 </FooterLink>
               ))}
             </Column>

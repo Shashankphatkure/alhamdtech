@@ -34,11 +34,11 @@ export default async function LocationPage({ params }) {
 
   const faqs = [
     {
-      q: `Do you take machining job work from ${loc.name}?`,
-      a: `Yes. We regularly serve customers in ${loc.name} from our workshop at ${site.address.line1}, Rabale, Navi Mumbai. ${loc.access}`,
+      q: `Do you take machining job work from ${loc.region ? 'outside Mumbai, anywhere in Maharashtra' : loc.name}?`,
+      a: `Yes. We serve customers ${loc.region ? 'all over Maharashtra' : `in ${loc.name}`} from our workshop at ${site.address.line1}, Rabale, Navi Mumbai. ${loc.access}`,
     },
     {
-      q: `How do I send a job from ${loc.name}?`,
+      q: `How do I send a job from ${loc.region ? 'elsewhere in Maharashtra' : loc.name}?`,
       a: 'Send the drawing or photos of the sample on WhatsApp or email for a quote. Once confirmed, drop the material or sample at the workshop, or ask us to source the material. Finished parts can be collected or sent by local transport.',
     },
     {
@@ -50,7 +50,7 @@ export default async function LocationPage({ params }) {
   return (
     <>
       <PageHero
-        eyebrow={`Serving ${loc.name}`}
+        eyebrow={loc.region ? 'Serving all of Maharashtra' : `Serving ${loc.name}`}
         title={loc.title}
         lead={loc.intro}
         image="/images/generated/about-workshop.webp"
@@ -65,7 +65,7 @@ export default async function LocationPage({ params }) {
       <section className="section">
         <div className="wrap grid gap-12 lg:grid-cols-[1.5fr_1fr] lg:gap-16">
           <div>
-            <h2 className="h-lg">A machine shop within reach of {loc.name}.</h2>
+            <h2 className="h-lg">{loc.region ? 'Machined parts delivered across Maharashtra.' : `A machine shop within reach of ${loc.name}.`}</h2>
             <div className="prose-body mt-6">
               {loc.local.map((p) => (
                 <p key={p}>{p}</p>
@@ -133,7 +133,7 @@ export default async function LocationPage({ params }) {
                 .map((l) => (
                   <li key={l.slug}>
                     <Link href={`/locations/${l.slug}`} className="inline-block rounded-none bg-white px-3 py-1.5 text-xs font-semibold text-navy-700 ring-1 ring-steel-200 hover:ring-navy-700">
-                      {l.name}
+                      {l.label || l.name}
                     </Link>
                   </li>
                 ))}
@@ -153,7 +153,9 @@ export default async function LocationPage({ params }) {
             description: loc.metaDescription,
             path: `/locations/${loc.slug}`,
           }),
-          areaServed: { '@type': 'Place', name: `${loc.name}, Maharashtra, India` },
+          areaServed: loc.region
+            ? { '@type': 'State', name: 'Maharashtra, India' }
+            : { '@type': 'Place', name: `${loc.name}, Maharashtra, India` },
         }}
       />
     </>

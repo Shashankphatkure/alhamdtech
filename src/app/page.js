@@ -340,7 +340,7 @@ export default function Home() {
           <SectionHeading
             eyebrow="Areas we serve"
             title="On the Thane-Belapur Road, close to every TTC node."
-            lead="Our workshop is in Rabale MIDC. We serve factories and maintenance teams across Navi Mumbai, Thane and Mumbai, and send parts to other cities by transport."
+            lead="Our workshop is in Rabale MIDC. We serve factories and maintenance teams across Navi Mumbai, Thane and Mumbai, and all over Maharashtra by transport and courier."
           />
           <ul className="grid grid-cols-2 gap-3 sm:grid-cols-4 lg:grid-cols-2 xl:grid-cols-4">
             {locations.map((l) => (
@@ -350,7 +350,7 @@ export default function Home() {
                   className="card card-hover flex h-full items-center gap-2.5 px-4 py-3.5 text-sm font-semibold text-navy-900"
                 >
                   <Icon name="map-pin" size={17} className="shrink-0 text-spark-500" />
-                  {l.name}
+                  {l.label || l.name}
                 </Link>
               </li>
             ))}

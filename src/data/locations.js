@@ -122,6 +122,24 @@ export const locations = [
     customers: ['Factories in Airoli, Digha and Ghansoli MIDC plots', 'Lift, HVAC and building-services contractors', 'Construction and transport equipment owners', 'Small workshops and garages'],
     access: 'Minutes from both Airoli and Ghansoli by the Thane-Belapur Road or the Trans-Harbour line to Rabale station.',
   },
+  {
+    slug: 'maharashtra',
+    name: 'Maharashtra',
+    // Shown in link lists; the state-wide page reads better as "All over Maharashtra".
+    label: 'All over Maharashtra',
+    region: true,
+    title: 'Machining & Fabrication Job Work Across Maharashtra',
+    metaDescription:
+      'CNC machining, lathe, milling, welding, EDM and fabrication job work for industries all over Maharashtra: Pune, Nashik, Chhatrapati Sambhajinagar, Nagpur, Raigad, Palghar and more. Parts dispatched by transport from Navi Mumbai.',
+    intro:
+      'Beyond Mumbai, Thane and Navi Mumbai, we take machining and fabrication work from customers all over Maharashtra. Quotes are handled over phone, WhatsApp and email, and finished parts are dispatched by transport or courier.',
+    local: [
+      'Maharashtra is India’s largest industrial state, and its plants share the same day-to-day needs: shafts, bushes, flanges, gears, rollers and fabricated parts made to a drawing or a worn sample. We supply these to units in Pune, Chakan and Pimpri-Chinchwad, Nashik, Chhatrapati Sambhajinagar (Aurangabad), Nagpur, Kolhapur, Satara, Solapur, and the industrial belts of Raigad and Palghar, including Patalganga, Roha, Mahad, Tarapur and Boisar.',
+      'Distance does not change how a job runs. Send the drawing or photos with dimensions on WhatsApp or email, approve the quote, and send the sample or material by transport, or ask us to source it. Finished parts are packed and dispatched by road transport or courier, with a GST invoice for every order.',
+    ],
+    customers: ['Manufacturing plants across MIDC areas in Maharashtra', 'Chemical, pharma and petrochemical units in Raigad and Palghar', 'Automotive and engineering suppliers in Pune and Nashik', 'Maintenance contractors and industrial traders'],
+    access: 'Orders from outside the Mumbai region are quoted remotely and dispatched by road transport or courier from our Rabale workshop.',
+  },
 ];
 
 export const getLocation = (slug) => locations.find((l) => l.slug === slug);

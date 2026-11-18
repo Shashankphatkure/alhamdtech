@@ -45,7 +45,7 @@ export const generalFaqs = [
   { q: 'Which industries do you serve?', a: 'Petroleum and petrochemical, oil and gas, soap manufacturing, crushing and quarrying, food processing, marine and general engineering.' },
   { q: 'Do you handle urgent breakdown jobs?', a: 'Yes. Because we are open late every day, urgent jobs are prioritised. Simple parts are often completed the same or next day when material is available.' },
   { q: 'Are you hiring machinists?', a: 'Yes. We are looking for skilled lathe operators and machinists. Call +91 90227 26250 or email thealhamdtechnologies@gmail.com to apply or to refer someone.' },
-  { q: 'Which areas do you serve?', a: 'Customers across Navi Mumbai, Thane and Mumbai, including Rabale, Airoli, Ghansoli, Mahape, Turbhe, Pawne and Taloja. Parts can also be sent by transport or courier to other cities.' },
+  { q: 'Which areas do you serve?', a: 'Customers across Navi Mumbai, Thane and Mumbai, including Rabale, Airoli, Ghansoli, Mahape, Turbhe, Pawne and Taloja, and all over Maharashtra, including Pune, Nashik, Chhatrapati Sambhajinagar, Nagpur, Raigad and Palghar. Parts are sent by transport or courier, with a GST invoice for every order.' },
   { q: 'Can I supply my own material?', a: 'Yes. Customer-supplied bar, plate, castings and forgings are welcome and are kept identified through the job.' },
   { q: 'Do you repair worn shafts and machine parts?', a: 'Yes. Worn bearing seats, damaged threads and keyways and cracked fabrications are repaired by welding, sleeving and re-machining when repair is the sound and economical option.' },
 ];

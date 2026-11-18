@@ -17,6 +17,7 @@ export const site = {
   phoneHref: 'tel:+919022726250',
   whatsapp: '919022726250',
   email: 'thealhamdtechnologies@gmail.com',
+  gst: '27AMCPK5301L1Z5',
   youtube: 'https://www.youtube.com/@TheAlhamdTechnologies',
   address: {
     line1: 'H No. 1890, Bhim Nagar, MIDC Road',
